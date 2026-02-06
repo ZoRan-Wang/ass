@@ -291,7 +291,7 @@ subplot(ggplotly(p1),
 
 ```
 
-##  **Interactive Data Visualisation - crosstalk methods**
+## **Interactive Data Visualisation - crosstalk methods**
 
 ### **Interactive Data Table: DT package**
 
