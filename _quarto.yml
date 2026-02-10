@@ -3,7 +3,9 @@ project:
 
 website:
   title: "ISSS608-VAA"
+  
 
+  
   navbar:
     left:
       - text: "Hands-on Exercise"
@@ -24,6 +26,20 @@ website:
             href: Hands-on_Ex/Hands-on_Ex04/Hands-on_Ex043.qmd
           - text: "Hands-on Exercise 4: Building Funnel Plot with R"
             href: Hands-on_Ex/Hands-on_Ex04/Hands-on_Ex044.qmd
+          - text: "Hands-on Exercise 5a"
+            href: Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex051.qmd
+          - text: "Hands-on Exercise 5b"
+            href: Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex052.qmd
+          - text: "Hands-on Exercise 5c"
+            href: Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex053.qmd
+          - text: "Hands-on Exercise 5d"
+            href: Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex054.qmd
+          - text: "Hands-on Exercise 5e"
+            href: Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex055.qmd
+      - text: "Take-home Exercise"
+        menu: 
+          - text: "Take-home Exercise"
+            href: Take-home_Ex/Take-home_EX1/Take-home_ex1.qmd
     right:
       - text: "Home"
         href: index.qmd
@@ -37,3 +53,5 @@ format:
 
 editor: visual
 
+execute:
+  freeze: auto
