@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Zhuoran Wang">
+<meta name="dcterms.date" content="2026-02-14">
 
-<title>Take-home_ex1 – ISSS608-VAA</title>
+<title>TH_EX1: Visually driven survey analysis of student learning outcomes – ISSS608-VAA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home-exercise">    
         <li>
-    <a class="dropdown-item" href="../../Take-home_Ex/Take-home_EX1/Take-home_ex1.qmd">
+    <a class="dropdown-item" href="../../Take-home_EX/Take-home_EX1/Take-home_ex1.html">
  <span class="dropdown-text">Take-home Exercise</span></a>
   </li>  
     </ul>
@@ -178,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -186,21 +221,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">## Overview</a></li>
-  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">## Data Source</a></li>
-  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">## Data Description</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link active" data-scroll-target="#data-source">Data Source</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
   <li><a href="#analytical-questions" id="toc-analytical-questions" class="nav-link" data-scroll-target="#analytical-questions">Analytical Questions</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">## Data Wrangling</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
+  <li><a href="#observation-section-overall-gpa-distribution-and-sample-structure" id="toc-observation-section-overall-gpa-distribution-and-sample-structure" class="nav-link" data-scroll-target="#observation-section-overall-gpa-distribution-and-sample-structure">Observation section: Overall GPA distribution and sample structure</a>
   <ul class="collapse">
-  <li><a href="#eda-1-overall-distribution" id="toc-eda-1-overall-distribution" class="nav-link" data-scroll-target="#eda-1-overall-distribution">EDA 1: Overall Distribution</a></li>
-  <li><a href="#eda-2-group-comparison" id="toc-eda-2-group-comparison" class="nav-link" data-scroll-target="#eda-2-group-comparison">EDA 2: Group Comparison</a></li>
-  <li><a href="#eda-3-bivariate-relationship" id="toc-eda-3-bivariate-relationship" class="nav-link" data-scroll-target="#eda-3-bivariate-relationship">EDA 3: Bivariate Relationship</a></li>
-  <li><a href="#eda-4-multivariate-perspective" id="toc-eda-4-multivariate-perspective" class="nav-link" data-scroll-target="#eda-4-multivariate-perspective">EDA 4: Multivariate Perspective</a></li>
-  <li><a href="#eda-5-additional-insight-optional" id="toc-eda-5-additional-insight-optional" class="nav-link" data-scroll-target="#eda-5-additional-insight-optional">EDA 5: Additional Insight (Optional)</a></li>
+  <li><a href="#observation-section-gpa-differences-by-year-and-gender" id="toc-observation-section-gpa-differences-by-year-and-gender" class="nav-link" data-scroll-target="#observation-section-gpa-differences-by-year-and-gender">Observation section: GPA differences by year and gender</a></li>
+  <li><a href="#observation-section-background-inequalities-using-poor-policy-minority" id="toc-observation-section-background-inequalities-using-poor-policy-minority" class="nav-link" data-scroll-target="#observation-section-background-inequalities-using-poor-policy-minority">Observation section: Background inequalities using poor, policy, minority</a></li>
+  <li><a href="#observation-section-multivariable-summary-with-ordinal-regression" id="toc-observation-section-multivariable-summary-with-ordinal-regression" class="nav-link" data-scroll-target="#observation-section-multivariable-summary-with-ordinal-regression">Observation section: Multivariable summary with ordinal regression</a></li>
   </ul></li>
-  <li><a href="#visual-design-considerations" id="toc-visual-design-considerations" class="nav-link" data-scroll-target="#visual-design-considerations">Visual Design Considerations</a></li>
   <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -208,24 +239,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Take-home_ex1</h1>
+<div class="quarto-title-block"><div><h1 class="title">TH_EX1: Visually driven survey analysis of student learning outcomes</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Zhuoran Wang </p>
-          </div>
-  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 14, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -235,63 +266,418 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">## Overview</h2>
-</section>
 <section id="data-source" class="level2">
-<h2 class="anchored" data-anchor-id="data-source">## Data Source</h2>
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>This analysis uses a single survey dataset file, Database paper.xlsx, together with the variable definitions in the provided codebook. All variable meanings, coding schemes, and valid ranges follow the codebook exactly, with no external relabelling or reinterpretation. Background information about the survey is described in the dataset paper, while all analytic variable labels used in this report come from the codebook.</p>
 </section>
 <section id="data-description" class="level2">
-<h2 class="anchored" data-anchor-id="data-description">## Data Description</h2>
+<h2 class="anchored" data-anchor-id="data-description">Data Description</h2>
+<p>Variables follow the codebook structure and are grouped into two blocks. Group A covers demographics, background characteristics, time allocation, and the outcome. It includes year of study, gender, policy beneficiary status, minority status, poor household status, time spent with friends, time spent on social media, time spent studying, and GPA. Group B contains nine Likert items that describe learning adaptation and perceived supports. Each item is recorded on a five point scale from 1 to 5.</p>
 </section>
 <section id="analytical-questions" class="level2">
 <h2 class="anchored" data-anchor-id="analytical-questions">Analytical Questions</h2>
-<hr>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>The analysis begins with a descriptive overview of the GPA distribution and the sample composition by key demographics. It then compares GPA patterns across year and gender using effect size summaries that remain interpretable under sample imbalance. Next, it examines descriptive associations between background disadvantage indicators and GPA. It also studies how time allocation relates to GPA while respecting the ordinal nature of the time categories. The report then evaluates whether the nine support and adaptation Likert items vary systematically across GPA levels. Finally, it fits an ordinal regression model to summarise how GPA relates jointly to background, time allocation, and perceived supports within a single multivariable framework.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, readxl, janitor,scales,forcats,patchwork,ggdist,ggridges,viridis,MASS,broom,psych) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>theme_survey<span class="ot">&lt;-</span><span class="cf">function</span>(){<span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">14</span>)<span class="sc">+</span><span class="fu">theme</span>(<span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),<span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>,<span class="at">size=</span><span class="dv">16</span>),<span class="at">plot.subtitle=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),<span class="at">strip.text=</span><span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>,<span class="at">size=</span><span class="dv">12</span>),<span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">13</span>),<span class="at">legend.position=</span><span class="st">"bottom"</span>,<span class="at">legend.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">11</span>),<span class="at">legend.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">11</span>),<span class="at">plot.margin=</span><span class="fu">margin</span>(<span class="dv">12</span>,<span class="dv">18</span>,<span class="dv">12</span>,<span class="dv">12</span>))}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 </section>
 <section id="data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling">## Data Wrangling</h2>
+<h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h2>
+<p>This section recodes integer codes into ordered factors following the codebook. GPA is treated as an ordinal outcome with five ordered categories. The nine Likert items are also treated as ordinal variables on a one to five scale. Time allocation variables are ordinal by construction and are retained as ordered factors for descriptive visualisations. For the multivariable model, time allocation is additionally represented as a numeric index to reduce parameter complexity while preserving ordering.</p>
+<p>Quality checks include missingness summaries, range checks for GPA and Likert items, and validation of unused factor levels that may produce unstable or rank deficient design matrices in ordinal regression.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"Database paper.xlsx"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(data_path) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 2,170
+Columns: 22
+$ year                &lt;dbl&gt; 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,…
+$ gender              &lt;dbl&gt; 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2,…
+$ policy_stu          &lt;dbl&gt; 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2,…
+$ minority_stu        &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…
+$ poor_stu            &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…
+$ father_edu          &lt;dbl&gt; 4, 3, 4, 5, 2, 5, 6, 5, 5, 5, 3, 3, 3, 3, 3, 4, 5,…
+$ mother_edu          &lt;dbl&gt; 4, 3, 4, 4, 3, 5, 5, 4, 5, 4, 3, 3, 3, 4, 3, 4, 5,…
+$ father_occupation   &lt;dbl&gt; 2, 2, 1, 1, 3, 1, 1, 5, 1, 3, 3, 3, 3, 3, 2, 2, 4,…
+$ mother_occupation   &lt;dbl&gt; 3, 4, 2, 1, 3, 2, 4, 3, 1, 3, 3, 3, 3, 3, 2, 2, 4,…
+$ time_friends        &lt;dbl&gt; 2, 1, 1, 2, 1, 1, 2, 2, 1, 3, 2, 2, 2, 2, 2, 1, 3,…
+$ time_socical_media  &lt;dbl&gt; 2, 3, 2, 2, 2, 3, 2, 2, 2, 2, 2, 1, 2, 2, 2, 3, 4,…
+$ time_studying       &lt;dbl&gt; 5, 5, 5, 5, 1, 2, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5,…
+$ gpa                 &lt;dbl&gt; 4, 3, 4, 4, 4, 4, 3, 5, 5, 3, 3, 4, 4, 3, 5, 4, 4,…
+$ adapt_learning_uni  &lt;dbl&gt; 4, 3, 4, 4, 5, 4, 4, 4, 4, 3, 4, 4, 4, 5, 4, 4, 5,…
+$ study_methods       &lt;dbl&gt; 4, 3, 4, 4, 5, 4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 3, 5,…
+$ support_of_uni      &lt;dbl&gt; 3, 3, 4, 5, 5, 5, 5, 5, 4, 5, 4, 4, 4, 5, 4, 4, 5,…
+$ support_of_lec      &lt;dbl&gt; 4, 4, 4, 5, 5, 4, 5, 4, 4, 5, 4, 4, 4, 5, 4, 4, 5,…
+$ facilitie_uni       &lt;dbl&gt; 4, 4, 3, 5, 5, 5, 5, 4, 4, 5, 4, 4, 4, 5, 4, 3, 5,…
+$ quality_lecturer    &lt;dbl&gt; 4, 3, 4, 5, 5, 5, 4, 5, 5, 5, 4, 4, 4, 5, 4, 4, 5,…
+$ training_curriculum &lt;dbl&gt; 4, 3, 4, 4, 5, 4, 5, 4, 4, 5, 4, 4, 4, 5, 4, 3, 5,…
+$ competitive_class   &lt;dbl&gt; 3, 3, 4, 4, 4, 3, 4, 3, 4, 4, 4, 4, 4, 5, 4, 4, 5,…
+$ infuence_f_friends  &lt;dbl&gt; 3, 4, 4, 4, 5, 3, 5, 4, 4, 4, 4, 4, 4, 5, 4, 5, 4,…</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>year_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"First year"</span>, <span class="st">"Second year"</span>, <span class="st">"Third year"</span>, <span class="st">"Fourth year"</span>, <span class="st">"Graduated"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>time_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Less than 1 hour"</span>, <span class="st">"1 to 2 hours"</span>, <span class="st">"2 to 3 hours"</span>, <span class="st">"3 to 4 hours"</span>, <span class="st">"More than 4 hours"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>study_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Less than 2 hours"</span>, <span class="st">"2 to 4 hours"</span>, <span class="st">"4 to 6 hours"</span>, <span class="st">"6 to 8 hours"</span>, <span class="st">"More than 8 hours"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>gpa_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Poor"</span>, <span class="st">"Below average"</span>, <span class="st">"Average"</span>, <span class="st">"Good"</span>, <span class="st">"Excellent"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>likert_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Slightly"</span>, <span class="st">"Moderately"</span>, <span class="st">"Highly"</span>, <span class="st">"Extremely"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>support_items <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"adapt_learning_uni"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"study_methods"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"support_of_uni"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"support_of_lec"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"facilitie_uni"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"quality_lecturer"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"training_curriculum"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"competitive_class"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"infuence_f_friends"</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df_raw <span class="sc">|&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">factor</span>(year, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> year_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">factor</span>(gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">policy_stu =</span> <span class="fu">factor</span>(policy_stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">minority_stu =</span> <span class="fu">factor</span>(minority_stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">poor_stu =</span> <span class="fu">factor</span>(poor_stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_friends =</span> <span class="fu">factor</span>(time_friends, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> time_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_socical_media =</span> <span class="fu">factor</span>(time_socical_media, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> time_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_studying =</span> <span class="fu">factor</span>(time_studying, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> study_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">gpa =</span> <span class="fu">factor</span>(gpa, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> gpa_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>()</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">if_else</span>(.x <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, .x, <span class="cn">NA_integer_</span>)),</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">factor</span>(.x, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> likert_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_index =</span> df_raw <span class="sc">|&gt;</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">transmute</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), as.numeric)) <span class="sc">|&gt;</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">support_index =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">everything</span>()), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">pull</span>(support_index),</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_index =</span> <span class="fu">if_else</span>(<span class="fu">is.nan</span>(support_index), <span class="cn">NA_real_</span>, support_index),</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(support_index)),</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">gpa_num =</span> <span class="fu">as.numeric</span>(gpa),</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">high_gpa =</span> gpa_num <span class="sc">&gt;=</span> <span class="dv">4</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>missing_summary <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.x)))) <span class="sc">|&gt;</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"n_missing"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n_missing))</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>missing_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 26 × 2
+   variable          n_missing
+   &lt;chr&gt;                 &lt;int&gt;
+ 1 year                      0
+ 2 gender                    0
+ 3 policy_stu                0
+ 4 minority_stu              0
+ 5 poor_stu                  0
+ 6 father_edu                0
+ 7 mother_edu                0
+ 8 father_occupation         0
+ 9 mother_occupation         0
+10 time_friends              0
+# ℹ 16 more rows</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>range_check_raw <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> support_items,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_value =</span> df_raw <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), min, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>(),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_value =</span> df_raw <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), max, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>range_check_clean <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> support_items,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_value =</span> df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">min</span>(<span class="fu">as.numeric</span>(.x), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>(),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_value =</span> df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(.x), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>range_check_raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+  variable            min_value max_value
+  &lt;chr&gt;                   &lt;dbl&gt;     &lt;dbl&gt;
+1 adapt_learning_uni          1         5
+2 study_methods               1         5
+3 support_of_uni              1         5
+4 support_of_lec              1         5
+5 facilitie_uni               1         5
+6 quality_lecturer            1         5
+7 training_curriculum         1         5
+8 competitive_class           1         5
+9 infuence_f_friends          1         5</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>range_check_clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+  variable            min_value max_value
+  &lt;chr&gt;                   &lt;dbl&gt;     &lt;dbl&gt;
+1 adapt_learning_uni          1         5
+2 study_methods               1         5
+3 support_of_uni              1         5
+4 support_of_lec              1         5
+5 facilitie_uni               1         5
+6 quality_lecturer            1         5
+7 training_curriculum         1         5
+8 competitive_class           1         5
+9 infuence_f_friends          1         5</code></pre>
+</div>
+</div>
 </section>
 <section id="exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
-<section id="eda-1-overall-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="eda-1-overall-distribution">EDA 1: Overall Distribution</h3>
-<hr>
 </section>
-<section id="eda-2-group-comparison" class="level3">
-<h3 class="anchored" data-anchor-id="eda-2-group-comparison">EDA 2: Group Comparison</h3>
-<hr>
+<section id="observation-section-overall-gpa-distribution-and-sample-structure" class="level2">
+<h2 class="anchored" data-anchor-id="observation-section-overall-gpa-distribution-and-sample-structure">Observation section: Overall GPA distribution and sample structure</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gpa_dist<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span><span class="fu">count</span>(gpa)<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">p=</span>n<span class="sc">/</span><span class="fu">sum</span>(n),<span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"n="</span>,n,<span class="st">"   "</span>,scales<span class="sc">::</span><span class="fu">percent</span>(p,<span class="at">accuracy=</span><span class="fl">0.1</span>)))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(gpa_dist,<span class="fu">aes</span>(gpa,p,<span class="at">fill=</span>gpa))<span class="sc">+</span><span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.75</span>,<span class="at">alpha=</span><span class="fl">0.9</span>)<span class="sc">+</span><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>label),<span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.4</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels=</span>\(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy=</span><span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.12</span>)))<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.9</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"GPA distribution"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Share of students"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()<span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">lineheight=</span><span class="fl">0.95</span>))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>comp_long<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(year,gender,poor_stu,policy_stu,minority_stu),as.character))<span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">c</span>(year,gender,poor_stu,policy_stu,minority_stu),<span class="at">names_to=</span><span class="st">"dimension"</span>,<span class="at">values_to=</span><span class="st">"group"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(dimension,group)<span class="sc">|&gt;</span><span class="fu">group_by</span>(dimension)<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">p=</span>n<span class="sc">/</span><span class="fu">sum</span>(n),<span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"n="</span>,n,<span class="st">"   "</span>,scales<span class="sc">::</span><span class="fu">percent</span>(p,<span class="at">accuracy=</span><span class="fl">0.1</span>)))<span class="sc">|&gt;</span><span class="fu">ungroup</span>()<span class="sc">|&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension=</span><span class="fu">fct_recode</span>(dimension,<span class="st">"Year"</span><span class="ot">=</span><span class="st">"year"</span>,<span class="st">"Gender"</span><span class="ot">=</span><span class="st">"gender"</span>,<span class="st">"Poor household"</span><span class="ot">=</span><span class="st">"poor_stu"</span>,<span class="st">"Policy beneficiary"</span><span class="ot">=</span><span class="st">"policy_stu"</span>,<span class="st">"Minority"</span><span class="ot">=</span><span class="st">"minority_stu"</span>))</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>p2<span class="ot">&lt;-</span><span class="fu">ggplot</span>(comp_long,<span class="fu">aes</span>(group,p,<span class="at">fill=</span>group))<span class="sc">+</span><span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>,<span class="at">alpha=</span><span class="fl">0.9</span>)<span class="sc">+</span><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>label),<span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.5</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>dimension,<span class="at">ncol=</span><span class="dv">2</span>,<span class="at">scales=</span><span class="st">"free_x"</span>)<span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels=</span>\(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy=</span><span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.18</span>)))<span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.85</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Sample structure"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Share within dimension"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()<span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.spacing=</span>grid<span class="sc">::</span><span class="fu">unit</span>(<span class="fl">1.2</span>,<span class="st">"lines"</span>),<span class="at">strip.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">11</span>),<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">lineheight=</span><span class="fl">0.95</span>))</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>(p1<span class="sc">|</span>p2)<span class="sc">+</span><span class="fu">plot_layout</span>(<span class="at">widths=</span><span class="fu">c</span>(<span class="fl">1.05</span>,<span class="fl">2.35</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_ex1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The GPA distribution concentrates in the middle categories, with relatively few observations in the lowest and highest categories. The sample is also strongly imbalanced across year and gender, which affects the precision of group comparisons. Smaller groups yield wider uncertainty and are more sensitive to sampling noise. Background indicators show additional imbalance, especially minority status, where the smaller group size limits precision. Subsequent sections therefore prioritise effect size summaries and uncertainty displays rather than relying on raw differences in bar heights.</p>
+<section id="observation-section-gpa-differences-by-year-and-gender" class="level3">
+<h3 class="anchored" data-anchor-id="observation-section-gpa-differences-by-year-and-gender">Observation section: GPA differences by year and gender</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>prop_ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> n)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">p =</span> p, <span class="at">lo =</span> p <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">hi =</span> p <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">n =</span> n)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>g_year <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">prop_ci</span>(high_gpa), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension =</span> <span class="st">"Year"</span>, <span class="at">group =</span> <span class="fu">as.character</span>(year))</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>g_gender <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">prop_ci</span>(high_gpa), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension =</span> <span class="st">"Gender"</span>, <span class="at">group =</span> <span class="fu">as.character</span>(gender))</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>g_plot <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(g_year, g_gender) <span class="sc">|&gt;</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension =</span> <span class="fu">factor</span>(dimension, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"Gender"</span>)))</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(g_plot, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> p)) <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, lo), <span class="at">ymax =</span> <span class="fu">pmin</span>(<span class="dv">1</span>, hi)), <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dimension, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Share of Good or Excellent GPA by year and gender"</span>,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Point estimates with approximate 95 percent intervals highlight imbalance and uncertainty"</span>,</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Share with GPA at least Good"</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_survey</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_ex1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Year and gender differences are summarised using a common effect size, the share of students with GPA at least Good. This framing supports direct comparisons across groups even when the sample is unbalanced. Interval widths vary substantially because group sample sizes differ, so apparent gaps must be interpreted together with uncertainty. These results are descriptive associations within the observed sample and motivate the use of multivariable summaries later in the report.</p>
 </section>
-<section id="eda-3-bivariate-relationship" class="level3">
-<h3 class="anchored" data-anchor-id="eda-3-bivariate-relationship">EDA 3: Bivariate Relationship</h3>
-<hr>
+<section id="observation-section-background-inequalities-using-poor-policy-minority" class="level3">
+<h3 class="anchored" data-anchor-id="observation-section-background-inequalities-using-poor-policy-minority">Observation section: Background inequalities using poor, policy, minority</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bg_long<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(poor_stu,policy_stu,minority_stu),as.character))<span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(<span class="fu">c</span>(poor_stu,policy_stu,minority_stu),<span class="at">names_to=</span><span class="st">"dimension"</span>,<span class="at">values_to=</span><span class="st">"group"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(dimension,group)<span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">n</span>(),<span class="at">p=</span><span class="fu">mean</span>(high_gpa),<span class="at">se=</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n),<span class="at">lo=</span>p<span class="fl">-1.96</span><span class="sc">*</span>se,<span class="at">hi=</span>p<span class="fl">+1.96</span><span class="sc">*</span>se,<span class="at">.groups=</span><span class="st">"drop"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">dimension=</span><span class="fu">fct_recode</span>(dimension,<span class="st">"Poor household"</span><span class="ot">=</span><span class="st">"poor_stu"</span>,<span class="st">"Policy beneficiary"</span><span class="ot">=</span><span class="st">"policy_stu"</span>,<span class="st">"Minority"</span><span class="ot">=</span><span class="st">"minority_stu"</span>))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>p3<span class="ot">&lt;-</span><span class="fu">ggplot</span>(bg_long,<span class="fu">aes</span>(group,p))<span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin=</span><span class="fu">pmax</span>(<span class="dv">0</span>,lo),<span class="at">ymax=</span><span class="fu">pmin</span>(<span class="dv">1</span>,hi)),<span class="at">linewidth=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"n="</span>,n)),<span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.8</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">facet_wrap</span>(<span class="sc">~</span>dimension,<span class="at">ncol=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">labels=</span><span class="fu">percent_format</span>(),<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>)))<span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Background indicators and GPA association"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Share with GPA ≥ Good"</span>)<span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_survey</span>()</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>p3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_ex1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The three background indicators show descriptive differences in the share of high GPA. Students from poor households tend to have a lower share of high GPA than those not in poor households. Policy beneficiary status also differs in high GPA share. Minority status exhibits the widest uncertainty because the minority group is much smaller. These patterns describe observed associations and do not identify causal mechanisms, but they provide context for later multivariable modelling. ### Observation section: Time allocation versus GPA</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>time_vars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"time_friends"</span>,<span class="st">"time_socical_media"</span>,<span class="st">"time_studying"</span>);<span class="fu">stopifnot</span>(<span class="fu">all</span>(time_vars<span class="sc">%in%</span><span class="fu">names</span>(df)))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>time_long<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(time_vars),as.numeric))<span class="sc">|&gt;</span><span class="fu">pivot_longer</span>(<span class="fu">all_of</span>(time_vars),<span class="at">names_to=</span><span class="st">"dimension"</span>,<span class="at">values_to=</span><span class="st">"time_cat"</span>)<span class="sc">|&gt;</span><span class="fu">group_by</span>(dimension,time_cat)<span class="sc">|&gt;</span><span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">n</span>(),<span class="at">p=</span><span class="fu">mean</span>(high_gpa),<span class="at">se=</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n),<span class="at">lo=</span>p<span class="fl">-1.96</span><span class="sc">*</span>se,<span class="at">hi=</span>p<span class="fl">+1.96</span><span class="sc">*</span>se,<span class="at">.groups=</span><span class="st">"drop"</span>)<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">time_index=</span><span class="fu">as.numeric</span>(time_cat),<span class="at">dimension=</span><span class="fu">fct_recode</span>(dimension,<span class="st">"Time with friends"</span><span class="ot">=</span><span class="st">"time_friends"</span>,<span class="st">"Time on social media"</span><span class="ot">=</span><span class="st">"time_socical_media"</span>,<span class="st">"Time spent studying"</span><span class="ot">=</span><span class="st">"time_studying"</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>p4<span class="ot">&lt;-</span><span class="fu">ggplot</span>(time_long,<span class="fu">aes</span>(time_index,p))<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">0.6</span>,<span class="at">alpha=</span><span class="fl">0.8</span>)<span class="sc">+</span><span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span><span class="fu">pmax</span>(<span class="dv">0</span>,lo),<span class="at">ymax=</span><span class="fu">pmin</span>(<span class="dv">1</span>,hi)),<span class="at">width=</span><span class="fl">0.12</span>,<span class="at">linewidth=</span><span class="fl">0.5</span>)<span class="sc">+</span><span class="fu">facet_wrap</span>(<span class="sc">~</span>dimension,<span class="at">ncol=</span><span class="dv">3</span>)<span class="sc">+</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)<span class="sc">+</span><span class="fu">scale_y_continuous</span>(<span class="at">labels=</span><span class="fu">percent_format</span>(),<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>)))<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Time allocation and GPA association"</span>,<span class="at">subtitle=</span><span class="st">"Time categories are ordinal coded, higher index means more time in that activity"</span>,<span class="at">x=</span><span class="st">"Ordinal time category index"</span>,<span class="at">y=</span><span class="st">"Share with GPA ≥ Good"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>p4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_ex1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Time allocation variables are recorded as ordered categories, so the horizontal axis represents ordered bins rather than equal hour differences. Studying time is concentrated toward higher categories in this sample, which reduces contrast for some comparisons. Social media time shows a clearer descriptive pattern in which the highest category aligns with a lower share of high GPA. Time with friends shows smaller differences with substantial interval overlap. These findings remain descriptive summaries of ordinal categories and support including time allocation jointly with background and supports in the ordinal regression. ### Observation section: Perceived supports and learning adaptation</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df2<span class="ot">&lt;-</span>df; <span class="cf">if</span>(<span class="sc">!</span><span class="st">"infuence_f_friends"</span><span class="sc">%in%</span><span class="fu">names</span>(df2) <span class="sc">&amp;&amp;</span> <span class="st">"infuencef_friends"</span><span class="sc">%in%</span><span class="fu">names</span>(df2)) df2<span class="ot">&lt;-</span>df2<span class="sc">|&gt;</span><span class="fu">rename</span>(<span class="at">infuence_f_friends=</span>infuencef_friends)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>support_items<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"adapt_learning_uni"</span>,<span class="st">"study_methods"</span>,<span class="st">"support_of_uni"</span>,<span class="st">"support_of_lec"</span>,<span class="st">"facilitie_uni"</span>,<span class="st">"quality_lecturer"</span>,<span class="st">"training_curriculum"</span>,<span class="st">"competitive_class"</span>,<span class="st">"infuence_f_friends"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="st">"support_z"</span><span class="sc">%in%</span><span class="fu">names</span>(df2)) df2<span class="ot">&lt;-</span>df2<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">any_of</span>(support_items),as.integer),<span class="at">support_z=</span><span class="fu">as.numeric</span>(<span class="fu">scale</span>(<span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">any_of</span>(support_items)),<span class="at">na.rm=</span><span class="cn">TRUE</span>))))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>likert_long<span class="ot">&lt;-</span>df2<span class="sc">|&gt;</span>dplyr<span class="sc">::</span><span class="fu">select</span>(gpa,dplyr<span class="sc">::</span><span class="fu">any_of</span>(support_items))<span class="sc">|&gt;</span>tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols=</span>dplyr<span class="sc">::</span><span class="fu">any_of</span>(support_items),<span class="at">names_to=</span><span class="st">"item"</span>,<span class="at">values_to=</span><span class="st">"score"</span>)<span class="sc">|&gt;</span>dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(score))<span class="sc">|&gt;</span>dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">score_num=</span><span class="fu">as.integer</span>(score),<span class="at">item=</span>dplyr<span class="sc">::</span><span class="fu">recode</span>(item,<span class="at">adapt_learning_uni=</span><span class="st">"Adapt learning at university"</span>,<span class="at">study_methods=</span><span class="st">"Study methods"</span>,<span class="at">support_of_uni=</span><span class="st">"University support"</span>,<span class="at">support_of_lec=</span><span class="st">"Lecturer support"</span>,<span class="at">facilitie_uni=</span><span class="st">"University facilities"</span>,<span class="at">quality_lecturer=</span><span class="st">"Lecturer quality"</span>,<span class="at">training_curriculum=</span><span class="st">"Training curriculum"</span>,<span class="at">competitive_class=</span><span class="st">"Class competition"</span>,<span class="at">infuence_f_friends=</span><span class="st">"Influence of friends"</span>,<span class="at">.default=</span>item))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>likert_mean<span class="ot">&lt;-</span>likert_long<span class="sc">|&gt;</span><span class="fu">group_by</span>(item,gpa)<span class="sc">|&gt;</span><span class="fu">summarise</span>(<span class="at">mean_score=</span><span class="fu">mean</span>(score_num),<span class="at">n=</span><span class="fu">n</span>(),<span class="at">.groups=</span><span class="st">"drop"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>p_heat<span class="ot">&lt;-</span><span class="fu">ggplot</span>(likert_mean,<span class="fu">aes</span>(gpa,item,<span class="at">fill=</span>mean_score))<span class="sc">+</span><span class="fu">geom_tile</span>(<span class="at">alpha=</span><span class="fl">0.95</span>)<span class="sc">+</span><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">sprintf</span>(<span class="st">"%.2f"</span>,mean_score)),<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span><span class="fu">scale_fill_viridis_c</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="at">breaks=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Likert item means by GPA level"</span>,<span class="at">subtitle=</span><span class="st">"Means are descriptive summaries for ordinal items, not interval truth"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="cn">NULL</span>,<span class="at">fill=</span><span class="st">"Mean"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>p_half<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df2,<span class="fu">aes</span>(gpa,support_z,<span class="at">fill=</span>gpa))<span class="sc">+</span><span class="fu">stat_halfeye</span>(<span class="at">adjust=</span><span class="fl">0.7</span>,<span class="at">width=</span><span class="fl">0.6</span>,<span class="at">point_interval=</span><span class="st">"median_qi"</span>,<span class="at">alpha=</span><span class="fl">0.8</span>)<span class="sc">+</span><span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.9</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Support index distribution across GPA levels"</span>,<span class="at">subtitle=</span><span class="st">"Support index is the row mean of Likert items, standardised for comparability"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Standardised support index"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>p_ridge<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df2,<span class="fu">aes</span>(support_z,gpa,<span class="at">fill=</span>gpa))<span class="sc">+</span><span class="fu">geom_density_ridges</span>(<span class="at">alpha=</span><span class="fl">0.85</span>,<span class="at">scale=</span><span class="fl">1.15</span>,<span class="at">color=</span><span class="st">"white"</span>,<span class="at">size=</span><span class="fl">0.2</span>)<span class="sc">+</span><span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.9</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Ridgeline view of support index across GPA levels"</span>,<span class="at">subtitle=</span><span class="st">"Distribution overlap and shifts across ordinal GPA categories"</span>,<span class="at">x=</span><span class="st">"Standardised support index"</span>,<span class="at">y=</span><span class="cn">NULL</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>p_heat<span class="sc">/</span>(p_half<span class="sc">|</span>p_ridge)<span class="sc">+</span><span class="fu">plot_layout</span>(<span class="at">heights=</span><span class="fu">c</span>(<span class="fl">1.2</span>,<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_ex1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1920"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Across the nine Likert items, mean scores tend to increase with higher GPA levels, suggesting a consistent descriptive gradient between perceived supports or learning adaptation and academic outcome. The heatmap fixes the colour scale to the full one to five range so comparisons remain meaningful across items. The composite support index complements item level patterns by summarising overall support, while the distribution plots highlight overlap between GPA groups and heterogeneity within groups. Likert summaries are interpreted descriptively with the ordinal scale in mind.</p>
 </section>
-<section id="eda-4-multivariate-perspective" class="level3">
-<h3 class="anchored" data-anchor-id="eda-4-multivariate-perspective">EDA 4: Multivariate Perspective</h3>
-<hr>
+<section id="observation-section-multivariable-summary-with-ordinal-regression" class="level3">
+<h3 class="anchored" data-anchor-id="observation-section-multivariable-summary-with-ordinal-regression">Observation section: Multivariable summary with ordinal regression</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_model <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">gpa =</span> gpa,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> year,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> gender,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">poor_stu =</span> poor_stu,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">policy_stu =</span> policy_stu,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">minority_stu =</span> minority_stu,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_friends_i =</span> <span class="fu">as.numeric</span>(time_friends),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_social_i =</span> <span class="fu">as.numeric</span>(time_socical_media),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_study_i =</span> <span class="fu">as.numeric</span>(time_studying),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_z =</span> support_z</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.factor), <span class="sc">~</span> <span class="fu">droplevels</span>(.x))</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>m_polr <span class="ot">&lt;-</span> <span class="fu">polr</span>(</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  gpa <span class="sc">~</span> year <span class="sc">+</span> gender <span class="sc">+</span> poor_stu <span class="sc">+</span> policy_stu <span class="sc">+</span> minority_stu <span class="sc">+</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    time_friends_i <span class="sc">+</span> time_social_i <span class="sc">+</span> time_study_i <span class="sc">+</span> support_z,</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> df_model,</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">Hess =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"logistic"</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>coefs <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(m_polr)) <span class="sc">|&gt;</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"term"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">estimate =</span> Value, <span class="at">se =</span> <span class="st">`</span><span class="at">Std. Error</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">lo =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> estimate <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">or =</span> <span class="fu">exp</span>(estimate),</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">or_lo =</span> <span class="fu">exp</span>(lo),</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">or_hi =</span> <span class="fu">exp</span>(hi)</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(term, <span class="st">"</span><span class="sc">\\</span><span class="st">|"</span>))</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coefs, <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> <span class="fu">fct_reorder</span>(term, or))) <span class="sc">+</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> or_lo, <span class="at">xmax =</span> or_hi), <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ordinal regression summary as odds ratios"</span>,</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Values above 1 align with higher GPA categories under the model, uncertainty shown as intervals"</span>,</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Odds ratio on log scale"</span>,</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_survey</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_ex1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The ordinal regression model summarises conditional associations between GPA and multiple covariates simultaneously under the proportional odds framework. Results are reported as odds ratios, where values above 1 indicate alignment with higher GPA categories after conditioning on other covariates. The support index shows a positive association with GPA, while higher social media time shows a negative association in this sample when other variables are held constant. Interval widths communicate estimation uncertainty, and wide intervals indicate limited precision under sample imbalance. These results describe conditional associations and do not establish causality. ## Visual Design Considerations Visual choices prioritise interpretability under imbalance and ordinal measurement. Comparable charts use consistent y axis ranges where appropriate, and Likert colour scales are fixed to the one to five range to support cross item comparison. Composition charts include both counts and percentages so readers can audit sample imbalance directly from the figure. Ordered factors follow substantive meaning rather than alphabetical ordering. A colourblind safe viridis palette is used consistently, and annotations are used only when they reduce reading time, such as counts on group summaries and a reference line at odds ratio 1 in the regression plot.</p>
 </section>
-<section id="eda-5-additional-insight-optional" class="level3">
-<h3 class="anchored" data-anchor-id="eda-5-additional-insight-optional">EDA 5: Additional Insight (Optional)</h3>
-<hr>
-</section>
-</section>
-<section id="visual-design-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="visual-design-considerations">Visual Design Considerations</h2>
-<hr>
 </section>
 <section id="key-findings" class="level2">
 <h2 class="anchored" data-anchor-id="key-findings">Key Findings</h2>
-<hr>
+<p>Overall distribution and structure. GPA concentrates in the middle categories, and the sample is heavily imbalanced by year and gender, so uncertainty varies widely across group comparisons. Year and gender patterns. Year groups show larger differences in the share of high GPA than gender groups, and group sample sizes strongly influence interval widths. Background indicators. Poor household, policy beneficiary, and minority indicators are associated with lower high GPA share, with minority estimates showing the lowest precision due to small group size. Time allocation. Social media time shows the clearest negative association at the highest category, while studying time shows limited contrast because responses concentrate in higher categories. Perceived supports. Likert item means and the composite support index increase across GPA categories, with substantial overlap that indicates heterogeneity rather than strict separation. Multivariable summary. In the ordinal regression, support index is positively associated with higher GPA categories and social media time is negatively associated, while background indicators remain relevant after joint conditioning, with uncertainty varying across terms.</p>
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
-<hr>
+<p>All measures are self reported and may reflect recall bias and social desirability effects. GPA, time allocation, and Likert items are ordinal, so analyses avoid treating them as interval scale quantities. The sample is imbalanced by year and gender, which affects precision and limits generalisability. Associations may reflect unmeasured confounding, including prior preparation, programme differences, and motivation. The multivariable model summarises conditional associations under the proportional odds assumption, and interpretation remains associational.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Wickham, H. et al.&nbsp;tidyverse: Easily Install and Load the ‘Tidyverse’. CRAN.<a href="https://cran.r-project.org/package=tidyverse" class="uri">https://cran.r-project.org/package=tidyverse</a></p>
+<p>Wickham, H. et al.&nbsp;ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics. CRAN. <a href="https://cran.r-project.org/package=ggplot2" class="uri">https://cran.r-project.org/package=ggplot2</a></p>
+<p>Kay, M. ggdist: Visualizations of Distributions and Uncertainty. CRAN. <a href="https://cran.r-project.org/package=ggdist" class="uri">https://cran.r-project.org/package=ggdist</a></p>
+<p>Wilke, C. O. ggridges: Ridgeline Plots in ‘ggplot2’. CRAN. <a href="https://cran.r-project.org/package=ggridges" class="uri">https://cran.r-project.org/package=ggridges</a></p>
+<p>Pedersen, T. L. patchwork: The Composer of Plots. CRAN. <a href="https://cran.r-project.org/package=patchwork" class="uri">https://cran.r-project.org/package=patchwork</a></p>
+<p>Venables, W. N. and Ripley, B. D. MASS: Support Functions and Datasets for Venables and Ripley’s MASS. CRAN. <a href="https://cran.r-project.org/package=MASS" class="uri">https://cran.r-project.org/package=MASS</a></p>
 
+
+<!-- -->
 
 </section>
 
@@ -366,6 +752,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -695,7 +1132,308 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TH_EX1: Visually driven survey analysis of student learning outcomes"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-02-14"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">    page-layout: full</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Source</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>This analysis uses a single survey dataset file, Database paper.xlsx, together with the variable definitions in the provided codebook. All variable meanings, coding schemes, and valid ranges follow the codebook exactly, with no external relabelling or reinterpretation. Background information about the survey is described in the dataset paper, while all analytic variable labels used in this report come from the codebook.</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Description</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>Variables follow the codebook structure and are grouped into two blocks. Group A covers demographics, background characteristics, time allocation, and the outcome. It includes year of study, gender, policy beneficiary status, minority status, poor household status, time spent with friends, time spent on social media, time spent studying, and GPA. Group B contains nine Likert items that describe learning adaptation and perceived supports. Each item is recorded on a five point scale from 1 to 5.</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analytical Questions</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>The analysis begins with a descriptive overview of the GPA distribution and the sample composition by key demographics. It then compares GPA patterns across year and gender using effect size summaries that remain interpretable under sample imbalance. Next, it examines descriptive associations between background disadvantage indicators and GPA. It also studies how time allocation relates to GPA while respecting the ordinal nature of the time categories. The report then evaluates whether the nine support and adaptation Likert items vary systematically across GPA levels. Finally, it fits an ordinal regression model to summarise how GPA relates jointly to background, time allocation, and perceived supports within a single multivariable framework.</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, readxl, janitor,scales,forcats,patchwork,ggdist,ggridges,viridis,MASS,broom,psych) </span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>theme_survey<span class="ot">&lt;-</span><span class="cf">function</span>(){<span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">14</span>)<span class="sc">+</span><span class="fu">theme</span>(<span class="at">panel.grid.minor=</span><span class="fu">element_blank</span>(),<span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>,<span class="at">size=</span><span class="dv">16</span>),<span class="at">plot.subtitle=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),<span class="at">strip.text=</span><span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>,<span class="at">size=</span><span class="dv">12</span>),<span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">13</span>),<span class="at">legend.position=</span><span class="st">"bottom"</span>,<span class="at">legend.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">11</span>),<span class="at">legend.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">11</span>),<span class="at">plot.margin=</span><span class="fu">margin</span>(<span class="dv">12</span>,<span class="dv">18</span>,<span class="dv">12</span>,<span class="dv">12</span>))}</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Wrangling</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>This section recodes integer codes into ordered factors following the codebook. GPA is treated as an ordinal outcome with five ordered categories. The nine Likert items are also treated as ordinal variables on a one to five scale. Time allocation variables are ordinal by construction and are retained as ordered factors for descriptive visualisations. For the multivariable model, time allocation is additionally represented as a numeric index to reduce parameter complexity while preserving ordering.</span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>Quality checks include missingness summaries, range checks for GPA and Likert items, and validation of unused factor levels that may produce unstable or rank deficient design matrices in ordinal regression.</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"Database paper.xlsx"</span>)</span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>df_raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(data_path) <span class="sc">|&gt;</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_raw)</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>year_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"First year"</span>, <span class="st">"Second year"</span>, <span class="st">"Third year"</span>, <span class="st">"Fourth year"</span>, <span class="st">"Graduated"</span>)</span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>time_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Less than 1 hour"</span>, <span class="st">"1 to 2 hours"</span>, <span class="st">"2 to 3 hours"</span>, <span class="st">"3 to 4 hours"</span>, <span class="st">"More than 4 hours"</span>)</span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>study_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Less than 2 hours"</span>, <span class="st">"2 to 4 hours"</span>, <span class="st">"4 to 6 hours"</span>, <span class="st">"6 to 8 hours"</span>, <span class="st">"More than 8 hours"</span>)</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>gpa_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Poor"</span>, <span class="st">"Below average"</span>, <span class="st">"Average"</span>, <span class="st">"Good"</span>, <span class="st">"Excellent"</span>)</span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>likert_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Slightly"</span>, <span class="st">"Moderately"</span>, <span class="st">"Highly"</span>, <span class="st">"Extremely"</span>)</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>support_items <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>  <span class="st">"adapt_learning_uni"</span>,</span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>  <span class="st">"study_methods"</span>,</span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>  <span class="st">"support_of_uni"</span>,</span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>  <span class="st">"support_of_lec"</span>,</span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>  <span class="st">"facilitie_uni"</span>,</span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>  <span class="st">"quality_lecturer"</span>,</span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>  <span class="st">"training_curriculum"</span>,</span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>  <span class="st">"competitive_class"</span>,</span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>  <span class="st">"infuence_f_friends"</span></span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df_raw <span class="sc">|&gt;</span></span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">factor</span>(year, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> year_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">factor</span>(gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">policy_stu =</span> <span class="fu">factor</span>(policy_stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">minority_stu =</span> <span class="fu">factor</span>(minority_stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">poor_stu =</span> <span class="fu">factor</span>(poor_stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_friends =</span> <span class="fu">factor</span>(time_friends, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> time_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_socical_media =</span> <span class="fu">factor</span>(time_socical_media, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> time_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_studying =</span> <span class="fu">factor</span>(time_studying, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> study_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>(),</span>
+<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">gpa =</span> <span class="fu">factor</span>(gpa, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> gpa_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">fct_drop</span>()</span>
+<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">if_else</span>(.x <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, .x, <span class="cn">NA_integer_</span>)),</span>
+<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">factor</span>(.x, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> likert_labels, <span class="at">ordered =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_index =</span> df_raw <span class="sc">|&gt;</span></span>
+<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a>      <span class="fu">transmute</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), as.numeric)) <span class="sc">|&gt;</span></span>
+<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">support_index =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">everything</span>()), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a>      <span class="fu">pull</span>(support_index),</span>
+<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_index =</span> <span class="fu">if_else</span>(<span class="fu">is.nan</span>(support_index), <span class="cn">NA_real_</span>, support_index),</span>
+<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(support_index)),</span>
+<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">gpa_num =</span> <span class="fu">as.numeric</span>(gpa),</span>
+<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">high_gpa =</span> gpa_num <span class="sc">&gt;=</span> <span class="dv">4</span></span>
+<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a>missing_summary <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.x)))) <span class="sc">|&gt;</span></span>
+<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"n_missing"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n_missing))</span>
+<span id="cb16-101"><a href="#cb16-101" aria-hidden="true" tabindex="-1"></a>missing_summary</span>
+<span id="cb16-102"><a href="#cb16-102" aria-hidden="true" tabindex="-1"></a>range_check_raw <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> support_items,</span>
+<span id="cb16-104"><a href="#cb16-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_value =</span> df_raw <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), min, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>(),</span>
+<span id="cb16-105"><a href="#cb16-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_value =</span> df_raw <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), max, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
+<span id="cb16-106"><a href="#cb16-106" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-107"><a href="#cb16-107" aria-hidden="true" tabindex="-1"></a>range_check_clean <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-108"><a href="#cb16-108" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> support_items,</span>
+<span id="cb16-109"><a href="#cb16-109" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_value =</span> df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">min</span>(<span class="fu">as.numeric</span>(.x), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>(),</span>
+<span id="cb16-110"><a href="#cb16-110" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_value =</span> df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(support_items), <span class="sc">~</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(.x), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
+<span id="cb16-111"><a href="#cb16-111" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-112"><a href="#cb16-112" aria-hidden="true" tabindex="-1"></a>range_check_raw</span>
+<span id="cb16-113"><a href="#cb16-113" aria-hidden="true" tabindex="-1"></a>range_check_clean</span>
+<span id="cb16-114"><a href="#cb16-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-115"><a href="#cb16-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-116"><a href="#cb16-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exploratory Data Analysis</span></span>
+<span id="cb16-117"><a href="#cb16-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-118"><a href="#cb16-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observation section: Overall GPA distribution and sample structure</span></span>
+<span id="cb16-119"><a href="#cb16-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-122"><a href="#cb16-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-123"><a href="#cb16-123" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 14</span></span>
+<span id="cb16-124"><a href="#cb16-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 7</span></span>
+<span id="cb16-125"><a href="#cb16-125" aria-hidden="true" tabindex="-1"></a>gpa_dist<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span><span class="fu">count</span>(gpa)<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">p=</span>n<span class="sc">/</span><span class="fu">sum</span>(n),<span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"n="</span>,n,<span class="st">"   "</span>,scales<span class="sc">::</span><span class="fu">percent</span>(p,<span class="at">accuracy=</span><span class="fl">0.1</span>)))</span>
+<span id="cb16-126"><a href="#cb16-126" aria-hidden="true" tabindex="-1"></a>p1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(gpa_dist,<span class="fu">aes</span>(gpa,p,<span class="at">fill=</span>gpa))<span class="sc">+</span><span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.75</span>,<span class="at">alpha=</span><span class="fl">0.9</span>)<span class="sc">+</span><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>label),<span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.4</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb16-127"><a href="#cb16-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels=</span>\(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb16-128"><a href="#cb16-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy=</span><span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.12</span>)))<span class="sc">+</span></span>
+<span id="cb16-129"><a href="#cb16-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.9</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"GPA distribution"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Share of students"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()<span class="sc">+</span></span>
+<span id="cb16-130"><a href="#cb16-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">lineheight=</span><span class="fl">0.95</span>))</span>
+<span id="cb16-131"><a href="#cb16-131" aria-hidden="true" tabindex="-1"></a>comp_long<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(year,gender,poor_stu,policy_stu,minority_stu),as.character))<span class="sc">|&gt;</span></span>
+<span id="cb16-132"><a href="#cb16-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">c</span>(year,gender,poor_stu,policy_stu,minority_stu),<span class="at">names_to=</span><span class="st">"dimension"</span>,<span class="at">values_to=</span><span class="st">"group"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb16-133"><a href="#cb16-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(dimension,group)<span class="sc">|&gt;</span><span class="fu">group_by</span>(dimension)<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">p=</span>n<span class="sc">/</span><span class="fu">sum</span>(n),<span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"n="</span>,n,<span class="st">"   "</span>,scales<span class="sc">::</span><span class="fu">percent</span>(p,<span class="at">accuracy=</span><span class="fl">0.1</span>)))<span class="sc">|&gt;</span><span class="fu">ungroup</span>()<span class="sc">|&gt;</span></span>
+<span id="cb16-134"><a href="#cb16-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension=</span><span class="fu">fct_recode</span>(dimension,<span class="st">"Year"</span><span class="ot">=</span><span class="st">"year"</span>,<span class="st">"Gender"</span><span class="ot">=</span><span class="st">"gender"</span>,<span class="st">"Poor household"</span><span class="ot">=</span><span class="st">"poor_stu"</span>,<span class="st">"Policy beneficiary"</span><span class="ot">=</span><span class="st">"policy_stu"</span>,<span class="st">"Minority"</span><span class="ot">=</span><span class="st">"minority_stu"</span>))</span>
+<span id="cb16-135"><a href="#cb16-135" aria-hidden="true" tabindex="-1"></a>p2<span class="ot">&lt;-</span><span class="fu">ggplot</span>(comp_long,<span class="fu">aes</span>(group,p,<span class="at">fill=</span>group))<span class="sc">+</span><span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>,<span class="at">alpha=</span><span class="fl">0.9</span>)<span class="sc">+</span><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>label),<span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.5</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb16-136"><a href="#cb16-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>dimension,<span class="at">ncol=</span><span class="dv">2</span>,<span class="at">scales=</span><span class="st">"free_x"</span>)<span class="sc">+</span></span>
+<span id="cb16-137"><a href="#cb16-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels=</span>\(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb16-138"><a href="#cb16-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy=</span><span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.18</span>)))<span class="sc">+</span></span>
+<span id="cb16-139"><a href="#cb16-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.85</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Sample structure"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Share within dimension"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()<span class="sc">+</span></span>
+<span id="cb16-140"><a href="#cb16-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.spacing=</span>grid<span class="sc">::</span><span class="fu">unit</span>(<span class="fl">1.2</span>,<span class="st">"lines"</span>),<span class="at">strip.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">11</span>),<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>,<span class="at">lineheight=</span><span class="fl">0.95</span>))</span>
+<span id="cb16-141"><a href="#cb16-141" aria-hidden="true" tabindex="-1"></a>(p1<span class="sc">|</span>p2)<span class="sc">+</span><span class="fu">plot_layout</span>(<span class="at">widths=</span><span class="fu">c</span>(<span class="fl">1.05</span>,<span class="fl">2.35</span>))</span>
+<span id="cb16-142"><a href="#cb16-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-143"><a href="#cb16-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-144"><a href="#cb16-144" aria-hidden="true" tabindex="-1"></a>The GPA distribution concentrates in the middle categories, with relatively few observations in the lowest and highest categories. The sample is also strongly imbalanced across year and gender, which affects the precision of group comparisons. Smaller groups yield wider uncertainty and are more sensitive to sampling noise. Background indicators show additional imbalance, especially minority status, where the smaller group size limits precision. Subsequent sections therefore prioritise effect size summaries and uncertainty displays rather than relying on raw differences in bar heights.</span>
+<span id="cb16-145"><a href="#cb16-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-146"><a href="#cb16-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Observation section: GPA differences by year and gender</span></span>
+<span id="cb16-147"><a href="#cb16-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-150"><a href="#cb16-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-151"><a href="#cb16-151" aria-hidden="true" tabindex="-1"></a>prop_ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb16-152"><a href="#cb16-152" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb16-153"><a href="#cb16-153" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb16-154"><a href="#cb16-154" aria-hidden="true" tabindex="-1"></a>  se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> n)</span>
+<span id="cb16-155"><a href="#cb16-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">p =</span> p, <span class="at">lo =</span> p <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">hi =</span> p <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">n =</span> n)</span>
+<span id="cb16-156"><a href="#cb16-156" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-157"><a href="#cb16-157" aria-hidden="true" tabindex="-1"></a>g_year <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb16-158"><a href="#cb16-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb16-159"><a href="#cb16-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">prop_ci</span>(high_gpa), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-160"><a href="#cb16-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension =</span> <span class="st">"Year"</span>, <span class="at">group =</span> <span class="fu">as.character</span>(year))</span>
+<span id="cb16-161"><a href="#cb16-161" aria-hidden="true" tabindex="-1"></a>g_gender <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb16-162"><a href="#cb16-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span></span>
+<span id="cb16-163"><a href="#cb16-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">prop_ci</span>(high_gpa), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-164"><a href="#cb16-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension =</span> <span class="st">"Gender"</span>, <span class="at">group =</span> <span class="fu">as.character</span>(gender))</span>
+<span id="cb16-165"><a href="#cb16-165" aria-hidden="true" tabindex="-1"></a>g_plot <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(g_year, g_gender) <span class="sc">|&gt;</span></span>
+<span id="cb16-166"><a href="#cb16-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dimension =</span> <span class="fu">factor</span>(dimension, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"Gender"</span>)))</span>
+<span id="cb16-167"><a href="#cb16-167" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(g_plot, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> p)) <span class="sc">+</span></span>
+<span id="cb16-168"><a href="#cb16-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, lo), <span class="at">ymax =</span> <span class="fu">pmin</span>(<span class="dv">1</span>, hi)), <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb16-169"><a href="#cb16-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb16-170"><a href="#cb16-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dimension, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb16-171"><a href="#cb16-171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb16-172"><a href="#cb16-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-173"><a href="#cb16-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Share of Good or Excellent GPA by year and gender"</span>,</span>
+<span id="cb16-174"><a href="#cb16-174" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Point estimates with approximate 95 percent intervals highlight imbalance and uncertainty"</span>,</span>
+<span id="cb16-175"><a href="#cb16-175" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb16-176"><a href="#cb16-176" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Share with GPA at least Good"</span></span>
+<span id="cb16-177"><a href="#cb16-177" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-178"><a href="#cb16-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_survey</span>()</span>
+<span id="cb16-179"><a href="#cb16-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-180"><a href="#cb16-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-181"><a href="#cb16-181" aria-hidden="true" tabindex="-1"></a>Year and gender differences are summarised using a common effect size, the share of students with GPA at least Good. This framing supports direct comparisons across groups even when the sample is unbalanced. Interval widths vary substantially because group sample sizes differ, so apparent gaps must be interpreted together with uncertainty. These results are descriptive associations within the observed sample and motivate the use of multivariable summaries later in the report.</span>
+<span id="cb16-182"><a href="#cb16-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-183"><a href="#cb16-183" aria-hidden="true" tabindex="-1"></a><span class="fu">### Observation section: Background inequalities using poor, policy, minority</span></span>
+<span id="cb16-184"><a href="#cb16-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-187"><a href="#cb16-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-188"><a href="#cb16-188" aria-hidden="true" tabindex="-1"></a>bg_long<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span></span>
+<span id="cb16-189"><a href="#cb16-189" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(poor_stu,policy_stu,minority_stu),as.character))<span class="sc">|&gt;</span></span>
+<span id="cb16-190"><a href="#cb16-190" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(<span class="fu">c</span>(poor_stu,policy_stu,minority_stu),<span class="at">names_to=</span><span class="st">"dimension"</span>,<span class="at">values_to=</span><span class="st">"group"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb16-191"><a href="#cb16-191" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(dimension,group)<span class="sc">|&gt;</span></span>
+<span id="cb16-192"><a href="#cb16-192" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">n</span>(),<span class="at">p=</span><span class="fu">mean</span>(high_gpa),<span class="at">se=</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n),<span class="at">lo=</span>p<span class="fl">-1.96</span><span class="sc">*</span>se,<span class="at">hi=</span>p<span class="fl">+1.96</span><span class="sc">*</span>se,<span class="at">.groups=</span><span class="st">"drop"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb16-193"><a href="#cb16-193" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">dimension=</span><span class="fu">fct_recode</span>(dimension,<span class="st">"Poor household"</span><span class="ot">=</span><span class="st">"poor_stu"</span>,<span class="st">"Policy beneficiary"</span><span class="ot">=</span><span class="st">"policy_stu"</span>,<span class="st">"Minority"</span><span class="ot">=</span><span class="st">"minority_stu"</span>))</span>
+<span id="cb16-194"><a href="#cb16-194" aria-hidden="true" tabindex="-1"></a>p3<span class="ot">&lt;-</span><span class="fu">ggplot</span>(bg_long,<span class="fu">aes</span>(group,p))<span class="sc">+</span></span>
+<span id="cb16-195"><a href="#cb16-195" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin=</span><span class="fu">pmax</span>(<span class="dv">0</span>,lo),<span class="at">ymax=</span><span class="fu">pmin</span>(<span class="dv">1</span>,hi)),<span class="at">linewidth=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb16-196"><a href="#cb16-196" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"n="</span>,n)),<span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.8</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb16-197"><a href="#cb16-197" aria-hidden="true" tabindex="-1"></a><span class="fu">facet_wrap</span>(<span class="sc">~</span>dimension,<span class="at">ncol=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb16-198"><a href="#cb16-198" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">labels=</span><span class="fu">percent_format</span>(),<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>)))<span class="sc">+</span></span>
+<span id="cb16-199"><a href="#cb16-199" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Background indicators and GPA association"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Share with GPA ≥ Good"</span>)<span class="sc">+</span></span>
+<span id="cb16-200"><a href="#cb16-200" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_survey</span>()</span>
+<span id="cb16-201"><a href="#cb16-201" aria-hidden="true" tabindex="-1"></a>p3</span>
+<span id="cb16-202"><a href="#cb16-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-203"><a href="#cb16-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-204"><a href="#cb16-204" aria-hidden="true" tabindex="-1"></a>The three background indicators show descriptive differences in the share of high GPA. Students from poor households tend to have a lower share of high GPA than those not in poor households. Policy beneficiary status also differs in high GPA share. Minority status exhibits the widest uncertainty because the minority group is much smaller. These patterns describe observed associations and do not identify causal mechanisms, but they provide context for later multivariable modelling. <span class="sc">\#</span>## Observation section: Time allocation versus GPA</span>
+<span id="cb16-205"><a href="#cb16-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-208"><a href="#cb16-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-209"><a href="#cb16-209" aria-hidden="true" tabindex="-1"></a>time_vars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"time_friends"</span>,<span class="st">"time_socical_media"</span>,<span class="st">"time_studying"</span>);<span class="fu">stopifnot</span>(<span class="fu">all</span>(time_vars<span class="sc">%in%</span><span class="fu">names</span>(df)))</span>
+<span id="cb16-210"><a href="#cb16-210" aria-hidden="true" tabindex="-1"></a>time_long<span class="ot">&lt;-</span>df<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(time_vars),as.numeric))<span class="sc">|&gt;</span><span class="fu">pivot_longer</span>(<span class="fu">all_of</span>(time_vars),<span class="at">names_to=</span><span class="st">"dimension"</span>,<span class="at">values_to=</span><span class="st">"time_cat"</span>)<span class="sc">|&gt;</span><span class="fu">group_by</span>(dimension,time_cat)<span class="sc">|&gt;</span><span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">n</span>(),<span class="at">p=</span><span class="fu">mean</span>(high_gpa),<span class="at">se=</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>n),<span class="at">lo=</span>p<span class="fl">-1.96</span><span class="sc">*</span>se,<span class="at">hi=</span>p<span class="fl">+1.96</span><span class="sc">*</span>se,<span class="at">.groups=</span><span class="st">"drop"</span>)<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">time_index=</span><span class="fu">as.numeric</span>(time_cat),<span class="at">dimension=</span><span class="fu">fct_recode</span>(dimension,<span class="st">"Time with friends"</span><span class="ot">=</span><span class="st">"time_friends"</span>,<span class="st">"Time on social media"</span><span class="ot">=</span><span class="st">"time_socical_media"</span>,<span class="st">"Time spent studying"</span><span class="ot">=</span><span class="st">"time_studying"</span>))</span>
+<span id="cb16-211"><a href="#cb16-211" aria-hidden="true" tabindex="-1"></a>p4<span class="ot">&lt;-</span><span class="fu">ggplot</span>(time_long,<span class="fu">aes</span>(time_index,p))<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">0.6</span>,<span class="at">alpha=</span><span class="fl">0.8</span>)<span class="sc">+</span><span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span><span class="fu">pmax</span>(<span class="dv">0</span>,lo),<span class="at">ymax=</span><span class="fu">pmin</span>(<span class="dv">1</span>,hi)),<span class="at">width=</span><span class="fl">0.12</span>,<span class="at">linewidth=</span><span class="fl">0.5</span>)<span class="sc">+</span><span class="fu">facet_wrap</span>(<span class="sc">~</span>dimension,<span class="at">ncol=</span><span class="dv">3</span>)<span class="sc">+</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)<span class="sc">+</span><span class="fu">scale_y_continuous</span>(<span class="at">labels=</span><span class="fu">percent_format</span>(),<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">expand=</span><span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>)))<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Time allocation and GPA association"</span>,<span class="at">subtitle=</span><span class="st">"Time categories are ordinal coded, higher index means more time in that activity"</span>,<span class="at">x=</span><span class="st">"Ordinal time category index"</span>,<span class="at">y=</span><span class="st">"Share with GPA ≥ Good"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb16-212"><a href="#cb16-212" aria-hidden="true" tabindex="-1"></a>p4</span>
+<span id="cb16-213"><a href="#cb16-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-214"><a href="#cb16-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-215"><a href="#cb16-215" aria-hidden="true" tabindex="-1"></a>Time allocation variables are recorded as ordered categories, so the horizontal axis represents ordered bins rather than equal hour differences. Studying time is concentrated toward higher categories in this sample, which reduces contrast for some comparisons. Social media time shows a clearer descriptive pattern in which the highest category aligns with a lower share of high GPA. Time with friends shows smaller differences with substantial interval overlap. These findings remain descriptive summaries of ordinal categories and support including time allocation jointly with background and supports in the ordinal regression. <span class="sc">\#</span>## Observation section: Perceived supports and learning adaptation</span>
+<span id="cb16-216"><a href="#cb16-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-219"><a href="#cb16-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-220"><a href="#cb16-220" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 20</span></span>
+<span id="cb16-221"><a href="#cb16-221" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 15</span></span>
+<span id="cb16-222"><a href="#cb16-222" aria-hidden="true" tabindex="-1"></a>df2<span class="ot">&lt;-</span>df; <span class="cf">if</span>(<span class="sc">!</span><span class="st">"infuence_f_friends"</span><span class="sc">%in%</span><span class="fu">names</span>(df2) <span class="sc">&amp;&amp;</span> <span class="st">"infuencef_friends"</span><span class="sc">%in%</span><span class="fu">names</span>(df2)) df2<span class="ot">&lt;-</span>df2<span class="sc">|&gt;</span><span class="fu">rename</span>(<span class="at">infuence_f_friends=</span>infuencef_friends)</span>
+<span id="cb16-223"><a href="#cb16-223" aria-hidden="true" tabindex="-1"></a>support_items<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"adapt_learning_uni"</span>,<span class="st">"study_methods"</span>,<span class="st">"support_of_uni"</span>,<span class="st">"support_of_lec"</span>,<span class="st">"facilitie_uni"</span>,<span class="st">"quality_lecturer"</span>,<span class="st">"training_curriculum"</span>,<span class="st">"competitive_class"</span>,<span class="st">"infuence_f_friends"</span>)</span>
+<span id="cb16-224"><a href="#cb16-224" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="st">"support_z"</span><span class="sc">%in%</span><span class="fu">names</span>(df2)) df2<span class="ot">&lt;-</span>df2<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">any_of</span>(support_items),as.integer),<span class="at">support_z=</span><span class="fu">as.numeric</span>(<span class="fu">scale</span>(<span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">any_of</span>(support_items)),<span class="at">na.rm=</span><span class="cn">TRUE</span>))))</span>
+<span id="cb16-225"><a href="#cb16-225" aria-hidden="true" tabindex="-1"></a>likert_long<span class="ot">&lt;-</span>df2<span class="sc">|&gt;</span>dplyr<span class="sc">::</span><span class="fu">select</span>(gpa,dplyr<span class="sc">::</span><span class="fu">any_of</span>(support_items))<span class="sc">|&gt;</span>tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols=</span>dplyr<span class="sc">::</span><span class="fu">any_of</span>(support_items),<span class="at">names_to=</span><span class="st">"item"</span>,<span class="at">values_to=</span><span class="st">"score"</span>)<span class="sc">|&gt;</span>dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(score))<span class="sc">|&gt;</span>dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">score_num=</span><span class="fu">as.integer</span>(score),<span class="at">item=</span>dplyr<span class="sc">::</span><span class="fu">recode</span>(item,<span class="at">adapt_learning_uni=</span><span class="st">"Adapt learning at university"</span>,<span class="at">study_methods=</span><span class="st">"Study methods"</span>,<span class="at">support_of_uni=</span><span class="st">"University support"</span>,<span class="at">support_of_lec=</span><span class="st">"Lecturer support"</span>,<span class="at">facilitie_uni=</span><span class="st">"University facilities"</span>,<span class="at">quality_lecturer=</span><span class="st">"Lecturer quality"</span>,<span class="at">training_curriculum=</span><span class="st">"Training curriculum"</span>,<span class="at">competitive_class=</span><span class="st">"Class competition"</span>,<span class="at">infuence_f_friends=</span><span class="st">"Influence of friends"</span>,<span class="at">.default=</span>item))</span>
+<span id="cb16-226"><a href="#cb16-226" aria-hidden="true" tabindex="-1"></a>likert_mean<span class="ot">&lt;-</span>likert_long<span class="sc">|&gt;</span><span class="fu">group_by</span>(item,gpa)<span class="sc">|&gt;</span><span class="fu">summarise</span>(<span class="at">mean_score=</span><span class="fu">mean</span>(score_num),<span class="at">n=</span><span class="fu">n</span>(),<span class="at">.groups=</span><span class="st">"drop"</span>)</span>
+<span id="cb16-227"><a href="#cb16-227" aria-hidden="true" tabindex="-1"></a>p_heat<span class="ot">&lt;-</span><span class="fu">ggplot</span>(likert_mean,<span class="fu">aes</span>(gpa,item,<span class="at">fill=</span>mean_score))<span class="sc">+</span><span class="fu">geom_tile</span>(<span class="at">alpha=</span><span class="fl">0.95</span>)<span class="sc">+</span><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">sprintf</span>(<span class="st">"%.2f"</span>,mean_score)),<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span><span class="fu">scale_fill_viridis_c</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="at">breaks=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Likert item means by GPA level"</span>,<span class="at">subtitle=</span><span class="st">"Means are descriptive summaries for ordinal items, not interval truth"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="cn">NULL</span>,<span class="at">fill=</span><span class="st">"Mean"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb16-228"><a href="#cb16-228" aria-hidden="true" tabindex="-1"></a>p_half<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df2,<span class="fu">aes</span>(gpa,support_z,<span class="at">fill=</span>gpa))<span class="sc">+</span><span class="fu">stat_halfeye</span>(<span class="at">adjust=</span><span class="fl">0.7</span>,<span class="at">width=</span><span class="fl">0.6</span>,<span class="at">point_interval=</span><span class="st">"median_qi"</span>,<span class="at">alpha=</span><span class="fl">0.8</span>)<span class="sc">+</span><span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.9</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Support index distribution across GPA levels"</span>,<span class="at">subtitle=</span><span class="st">"Support index is the row mean of Likert items, standardised for comparability"</span>,<span class="at">x=</span><span class="cn">NULL</span>,<span class="at">y=</span><span class="st">"Standardised support index"</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb16-229"><a href="#cb16-229" aria-hidden="true" tabindex="-1"></a>p_ridge<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df2,<span class="fu">aes</span>(support_z,gpa,<span class="at">fill=</span>gpa))<span class="sc">+</span><span class="fu">geom_density_ridges</span>(<span class="at">alpha=</span><span class="fl">0.85</span>,<span class="at">scale=</span><span class="fl">1.15</span>,<span class="at">color=</span><span class="st">"white"</span>,<span class="at">size=</span><span class="fl">0.2</span>)<span class="sc">+</span><span class="fu">scale_fill_viridis_d</span>(<span class="at">option=</span><span class="st">"C"</span>,<span class="at">end=</span><span class="fl">0.9</span>,<span class="at">guide=</span><span class="st">"none"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Ridgeline view of support index across GPA levels"</span>,<span class="at">subtitle=</span><span class="st">"Distribution overlap and shifts across ordinal GPA categories"</span>,<span class="at">x=</span><span class="st">"Standardised support index"</span>,<span class="at">y=</span><span class="cn">NULL</span>)<span class="sc">+</span><span class="fu">theme_survey</span>()</span>
+<span id="cb16-230"><a href="#cb16-230" aria-hidden="true" tabindex="-1"></a>p_heat<span class="sc">/</span>(p_half<span class="sc">|</span>p_ridge)<span class="sc">+</span><span class="fu">plot_layout</span>(<span class="at">heights=</span><span class="fu">c</span>(<span class="fl">1.2</span>,<span class="dv">1</span>))</span>
+<span id="cb16-231"><a href="#cb16-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-232"><a href="#cb16-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-233"><a href="#cb16-233" aria-hidden="true" tabindex="-1"></a>Across the nine Likert items, mean scores tend to increase with higher GPA levels, suggesting a consistent descriptive gradient between perceived supports or learning adaptation and academic outcome. The heatmap fixes the colour scale to the full one to five range so comparisons remain meaningful across items. The composite support index complements item level patterns by summarising overall support, while the distribution plots highlight overlap between GPA groups and heterogeneity within groups. Likert summaries are interpreted descriptively with the ordinal scale in mind.</span>
+<span id="cb16-234"><a href="#cb16-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-235"><a href="#cb16-235" aria-hidden="true" tabindex="-1"></a><span class="fu">### Observation section: Multivariable summary with ordinal regression</span></span>
+<span id="cb16-236"><a href="#cb16-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-239"><a href="#cb16-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-240"><a href="#cb16-240" aria-hidden="true" tabindex="-1"></a>df_model <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb16-241"><a href="#cb16-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb16-242"><a href="#cb16-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">gpa =</span> gpa,</span>
+<span id="cb16-243"><a href="#cb16-243" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> year,</span>
+<span id="cb16-244"><a href="#cb16-244" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> gender,</span>
+<span id="cb16-245"><a href="#cb16-245" aria-hidden="true" tabindex="-1"></a>    <span class="at">poor_stu =</span> poor_stu,</span>
+<span id="cb16-246"><a href="#cb16-246" aria-hidden="true" tabindex="-1"></a>    <span class="at">policy_stu =</span> policy_stu,</span>
+<span id="cb16-247"><a href="#cb16-247" aria-hidden="true" tabindex="-1"></a>    <span class="at">minority_stu =</span> minority_stu,</span>
+<span id="cb16-248"><a href="#cb16-248" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_friends_i =</span> <span class="fu">as.numeric</span>(time_friends),</span>
+<span id="cb16-249"><a href="#cb16-249" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_social_i =</span> <span class="fu">as.numeric</span>(time_socical_media),</span>
+<span id="cb16-250"><a href="#cb16-250" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_study_i =</span> <span class="fu">as.numeric</span>(time_studying),</span>
+<span id="cb16-251"><a href="#cb16-251" aria-hidden="true" tabindex="-1"></a>    <span class="at">support_z =</span> support_z</span>
+<span id="cb16-252"><a href="#cb16-252" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-253"><a href="#cb16-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-254"><a href="#cb16-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-255"><a href="#cb16-255" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.factor), <span class="sc">~</span> <span class="fu">droplevels</span>(.x))</span>
+<span id="cb16-256"><a href="#cb16-256" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-257"><a href="#cb16-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-258"><a href="#cb16-258" aria-hidden="true" tabindex="-1"></a>m_polr <span class="ot">&lt;-</span> <span class="fu">polr</span>(</span>
+<span id="cb16-259"><a href="#cb16-259" aria-hidden="true" tabindex="-1"></a>  gpa <span class="sc">~</span> year <span class="sc">+</span> gender <span class="sc">+</span> poor_stu <span class="sc">+</span> policy_stu <span class="sc">+</span> minority_stu <span class="sc">+</span></span>
+<span id="cb16-260"><a href="#cb16-260" aria-hidden="true" tabindex="-1"></a>    time_friends_i <span class="sc">+</span> time_social_i <span class="sc">+</span> time_study_i <span class="sc">+</span> support_z,</span>
+<span id="cb16-261"><a href="#cb16-261" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> df_model,</span>
+<span id="cb16-262"><a href="#cb16-262" aria-hidden="true" tabindex="-1"></a>  <span class="at">Hess =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-263"><a href="#cb16-263" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"logistic"</span></span>
+<span id="cb16-264"><a href="#cb16-264" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-265"><a href="#cb16-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-266"><a href="#cb16-266" aria-hidden="true" tabindex="-1"></a>coefs <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(m_polr)) <span class="sc">|&gt;</span></span>
+<span id="cb16-267"><a href="#cb16-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-268"><a href="#cb16-268" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"term"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-269"><a href="#cb16-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-270"><a href="#cb16-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">estimate =</span> Value, <span class="at">se =</span> <span class="st">`</span><span class="at">Std. Error</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-271"><a href="#cb16-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-272"><a href="#cb16-272" aria-hidden="true" tabindex="-1"></a>    <span class="at">lo =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb16-273"><a href="#cb16-273" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> estimate <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb16-274"><a href="#cb16-274" aria-hidden="true" tabindex="-1"></a>    <span class="at">or =</span> <span class="fu">exp</span>(estimate),</span>
+<span id="cb16-275"><a href="#cb16-275" aria-hidden="true" tabindex="-1"></a>    <span class="at">or_lo =</span> <span class="fu">exp</span>(lo),</span>
+<span id="cb16-276"><a href="#cb16-276" aria-hidden="true" tabindex="-1"></a>    <span class="at">or_hi =</span> <span class="fu">exp</span>(hi)</span>
+<span id="cb16-277"><a href="#cb16-277" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-278"><a href="#cb16-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(term, <span class="st">"</span><span class="sc">\\</span><span class="st">|"</span>))</span>
+<span id="cb16-279"><a href="#cb16-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-280"><a href="#cb16-280" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coefs, <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> <span class="fu">fct_reorder</span>(term, or))) <span class="sc">+</span></span>
+<span id="cb16-281"><a href="#cb16-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb16-282"><a href="#cb16-282" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> or_lo, <span class="at">xmax =</span> or_hi), <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb16-283"><a href="#cb16-283" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb16-284"><a href="#cb16-284" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-285"><a href="#cb16-285" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ordinal regression summary as odds ratios"</span>,</span>
+<span id="cb16-286"><a href="#cb16-286" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Values above 1 align with higher GPA categories under the model, uncertainty shown as intervals"</span>,</span>
+<span id="cb16-287"><a href="#cb16-287" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Odds ratio on log scale"</span>,</span>
+<span id="cb16-288"><a href="#cb16-288" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb16-289"><a href="#cb16-289" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-290"><a href="#cb16-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_survey</span>()</span>
+<span id="cb16-291"><a href="#cb16-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-292"><a href="#cb16-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-293"><a href="#cb16-293" aria-hidden="true" tabindex="-1"></a>The ordinal regression model summarises conditional associations between GPA and multiple covariates simultaneously under the proportional odds framework. Results are reported as odds ratios, where values above 1 indicate alignment with higher GPA categories after conditioning on other covariates. The support index shows a positive association with GPA, while higher social media time shows a negative association in this sample when other variables are held constant. Interval widths communicate estimation uncertainty, and wide intervals indicate limited precision under sample imbalance. These results describe conditional associations and do not establish causality. <span class="sc">\#</span># Visual Design Considerations Visual choices prioritise interpretability under imbalance and ordinal measurement. Comparable charts use consistent y axis ranges where appropriate, and Likert colour scales are fixed to the one to five range to support cross item comparison. Composition charts include both counts and percentages so readers can audit sample imbalance directly from the figure. Ordered factors follow substantive meaning rather than alphabetical ordering. A colourblind safe viridis palette is used consistently, and annotations are used only when they reduce reading time, such as counts on group summaries and a reference line at odds ratio 1 in the regression plot.</span>
+<span id="cb16-294"><a href="#cb16-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-295"><a href="#cb16-295" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Findings</span></span>
+<span id="cb16-296"><a href="#cb16-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-297"><a href="#cb16-297" aria-hidden="true" tabindex="-1"></a>Overall distribution and structure. GPA concentrates in the middle categories, and the sample is heavily imbalanced by year and gender, so uncertainty varies widely across group comparisons. Year and gender patterns. Year groups show larger differences in the share of high GPA than gender groups, and group sample sizes strongly influence interval widths. Background indicators. Poor household, policy beneficiary, and minority indicators are associated with lower high GPA share, with minority estimates showing the lowest precision due to small group size. Time allocation. Social media time shows the clearest negative association at the highest category, while studying time shows limited contrast because responses concentrate in higher categories. Perceived supports. Likert item means and the composite support index increase across GPA categories, with substantial overlap that indicates heterogeneity rather than strict separation. Multivariable summary. In the ordinal regression, support index is positively associated with higher GPA categories and social media time is negatively associated, while background indicators remain relevant after joint conditioning, with uncertainty varying across terms.</span>
+<span id="cb16-298"><a href="#cb16-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-299"><a href="#cb16-299" aria-hidden="true" tabindex="-1"></a><span class="fu">## Limitations</span></span>
+<span id="cb16-300"><a href="#cb16-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-301"><a href="#cb16-301" aria-hidden="true" tabindex="-1"></a>All measures are self reported and may reflect recall bias and social desirability effects. GPA, time allocation, and Likert items are ordinal, so analyses avoid treating them as interval scale quantities. The sample is imbalanced by year and gender, which affects precision and limits generalisability. Associations may reflect unmeasured confounding, including prior preparation, programme differences, and motivation. The multivariable model summarises conditional associations under the proportional odds assumption, and interpretation remains associational.</span>
+<span id="cb16-302"><a href="#cb16-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-303"><a href="#cb16-303" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb16-304"><a href="#cb16-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-305"><a href="#cb16-305" aria-hidden="true" tabindex="-1"></a>Wickham, H. et al. tidyverse: Easily Install and Load the 'Tidyverse'. CRAN.<span class="ot">&lt;https://cran.r-project.org/package=tidyverse&gt;</span></span>
+<span id="cb16-306"><a href="#cb16-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-307"><a href="#cb16-307" aria-hidden="true" tabindex="-1"></a>Wickham, H. et al. ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics. CRAN. <span class="ot">&lt;https://cran.r-project.org/package=ggplot2&gt;</span></span>
+<span id="cb16-308"><a href="#cb16-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-309"><a href="#cb16-309" aria-hidden="true" tabindex="-1"></a>Kay, M. ggdist: Visualizations of Distributions and Uncertainty. CRAN. <span class="ot">&lt;https://cran.r-project.org/package=ggdist&gt;</span></span>
+<span id="cb16-310"><a href="#cb16-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-311"><a href="#cb16-311" aria-hidden="true" tabindex="-1"></a>Wilke, C. O. ggridges: Ridgeline Plots in 'ggplot2'. CRAN. <span class="ot">&lt;https://cran.r-project.org/package=ggridges&gt;</span></span>
+<span id="cb16-312"><a href="#cb16-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-313"><a href="#cb16-313" aria-hidden="true" tabindex="-1"></a>Pedersen, T. L. patchwork: The Composer of Plots. CRAN. <span class="ot">&lt;https://cran.r-project.org/package=patchwork&gt;</span></span>
+<span id="cb16-314"><a href="#cb16-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-315"><a href="#cb16-315" aria-hidden="true" tabindex="-1"></a>Venables, W. N. and Ripley, B. D. MASS: Support Functions and Datasets for Venables and Ripley's MASS. CRAN. <span class="ot">&lt;https://cran.r-project.org/package=MASS&gt;</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
