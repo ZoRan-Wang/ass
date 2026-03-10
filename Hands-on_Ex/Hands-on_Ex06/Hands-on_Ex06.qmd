@@ -132,7 +132,7 @@ top4_attacks <- attacks %>%
   na.omit()
 ```
 
-###  **Plotting Multiple Calendar Heatmaps**
+### **Plotting Multiple Calendar Heatmaps**
 
 ```{r}
 ggplot(top4_attacks, 
@@ -167,7 +167,7 @@ In this section, you will learn how to plot a cycle plot showing the time-series
 air <- read_excel("data/arrivals_by_air.xlsx")
 ```
 
-###  **Step 2: Deriving month and year fields**
+### **Step 2: Deriving month and year fields**
 
 ```{r}
 air$month <- factor(month(air$`Month-Year`), 
@@ -219,7 +219,7 @@ ggplot() +
 
 ## **Plotting Slopegraph**
 
-###  **Step 1: Data Import**
+### **Step 1: Data Import**
 
 Import the rice data set into R environment by using the code chunk below.
 

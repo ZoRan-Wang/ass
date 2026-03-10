@@ -38,6 +38,15 @@ website:
             href: Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex055.qmd
           - text: "Hands-on Exercise 6"
             href: Hands-on_Ex/Hands-on_Ex06/Hands-on_Ex06.qmd
+          - text: "Hands-on Exercise 8:Choropleth Mapping with R"
+            href: Hands-on_Ex/Hands-on_Ex07/Hands-on_Ex081.qmd
+          - text: "Hands-on Exercise 8:Visualising Geospatial Point Data"
+            href: Hands-on_Ex/Hands-on_Ex07/Hands-on_Ex82.qmd
+          - text: "Hands-on Exercise 8:Analytical Mapping"
+            href: Hands-on_Ex/Hands-on_Ex07/Hands-on_Ex83.qmd
+          - text: "Hands-on Exercise 9"
+            href: Hands-on_Ex/Hands-on_Ex09/Hands-on_Ex09.qmd
+            
       - text: "Take-home Exercise"
         menu: 
           - text: "Take-home Exercise"
