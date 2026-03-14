@@ -101,7 +101,7 @@ NGA_wp <- NGA_wp %>%
   mutate(pct_nonfunctional = wp_nonfunctional/total_wp)
 ```
 
-###  **Plotting map of rate**
+### **Plotting map of rate**
 
 ```{r}
 tm_shape(NGA_wp) +
@@ -143,7 +143,7 @@ var <- NGA_wp["pct_functional"] %>%
 quantile(var[,1], percent)
 ```
 
-```{}
+```         
 ```
 
 #### 23.5.1.2 Why writing functions?
@@ -294,7 +294,7 @@ get.var <- function(vname,df) {
 
 ![](images/clipboard-410211640.gif)
 
-####  Test drive the newly created function
+#### Test drive the newly created function
 
 Let’s test the newly created function
 

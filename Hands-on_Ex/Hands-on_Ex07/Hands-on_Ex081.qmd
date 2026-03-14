@@ -20,13 +20,13 @@ You can examine the content of `mpsz` by using the code chunk below.
 mpsz
 ```
 
-###  **Importing Attribute Data into R**
+### **Importing Attribute Data into R**
 
 ```{r}
 popdata <- read_csv("data/respopagesextod2011to2020.csv")
 ```
 
-####  Data wrangling
+#### Data wrangling
 
 The following data wrangling and transformation functions will be used:
 
@@ -88,7 +88,7 @@ Two approaches can be used to prepare thematic map using *tmap*, they are:
 
 -   Plotting highly customisable thematic map by using tmap elements.
 
-```{}
+```         
 ```
 
 ### **Adding the boxplot with**
@@ -166,7 +166,7 @@ Things to learn from *tm_polygons()*:
 
 -   By default, Missing value will be shaded in grey.
 
-####  Drawing a choropleth map using *tm_fill()* and \*tm_border()\*\*
+#### Drawing a choropleth map using *tm_fill()* and \*tm_border()\*\*
 
 Actually, *tm_polygons()* is a wraper of *tm_fill()* and *tm_border()*. *tm_fill()* shades the polygons by using the default colour scheme and *tm_borders()* adds the borders of the shapefile onto the choropleth map.
 
@@ -447,7 +447,7 @@ agedmap <- tm_shape(mpsz_pop2020)+
 tmap_arrange(youngmap, agedmap, asp=1, ncol=2)
 ```
 
-###  **Mappping Spatial Object Meeting a Selection Criterion**
+### **Mappping Spatial Object Meeting a Selection Criterion**
 
 Instead of creating small multiple choropleth map, you can also use selection funtion to map spatial objects meeting the selection criterion.
 
