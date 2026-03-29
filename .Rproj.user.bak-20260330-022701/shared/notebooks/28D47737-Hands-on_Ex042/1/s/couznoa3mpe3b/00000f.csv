@@ -1,0 +1,67 @@
+"0","pacman::p_load(ggstatsplot, tidyverse)"
+"1","
+"
+"1",""
+"1","  有二进制版本，但源代码版本更新"
+"1",""
+"1",":
+"
+"1","           "
+"1"," binary"
+"1"," source"
+"1"," needs_compilation"
+"1","
+ggstatsplot"
+"1"," 0.13.4"
+"1"," 0.13.5"
+"1","             FALSE"
+"1","
+"
+"1","
+"
+"2","试开URL’https://cran.rstudio.com/src/contrib/ggstatsplot_0.13.5.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 4203450 bytes (4.0 MB)
+"
+"2","downloaded 4.0 MB
+
+"
+"1","* installing *source* package 'ggstatsplot' ...
+"
+"1","** this is package 'ggstatsplot' version '0.13.5'
+"
+"1","** package 'ggstatsplot' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** data
+"
+"1","*** moving datasets to lazyload DB
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
+"
+"1","  namespace 'dplyr' 1.1.4 is being loaded, but >= 1.2.0 is required
+"
+"1","Calls: <Anonymous> ... withCallingHandlers -> loadNamespace -> namespaceImport -> loadNamespace
+"
+"1","Execution halted
+"
+"1","ERROR: lazy loading failed for package 'ggstatsplot'
+"
+"1","* removing 'C:/Users/Hasee/AppData/Local/R/win-library/4.5/ggstatsplot'
+"
+"2","
+"
+"2",""
+"2","下载的程序包在
+	‘C:\Users\Hasee\AppData\Local\Temp\RtmpQhJ4xD\downloaded_packages’里"
+"2",""
+"2","
+"

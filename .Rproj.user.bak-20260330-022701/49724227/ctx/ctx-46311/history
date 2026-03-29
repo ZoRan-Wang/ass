@@ -1,0 +1,512 @@
+agpop_mutated,
+a = ~YOUNG,
+b = ~ACTIVE,
+c = ~OLD,
+color = I("black"),
+type = "scatterternary"
+) %>%
+layout(
+annotations = label("Ternary Markers"),
+ternary = ternaryAxes
+)
+pacman::p_load(seriation, dendextend, heatmaply, tidyverse)
+wh <- read_csv("data/WHData-2018.csv")
+row.names(wh) <- wh$Country
+row.names(wh) <- wh$Country
+wh1 <- dplyr::select(wh, c(3, 7:12))
+wh_matrix <- data.matrix(wh)
+wh_heatmap <- heatmap(wh_matrix,
+Rowv=NA, Colv=NA)
+ggplot(my_sum) +
+wh_heatmap <- heatmap(wh_matrix)
+ggplot(my_sum) +
+wh_heatmap <- heatmap(wh_matrix)
+wh_heatmap <- heatmap(wh_matrix)
+wh_heatmap <- heatmap(wh_matrix,
+scale="column",
+cexRow = 0.6,
+cexCol = 0.8,
+margins = c(10, 4))
+#| fig-width: 12
+#| fig-height: 12
+wh_heatmap <- heatmap(wh_matrix,
+scale="column",
+cexRow = 0.6,
+cexCol = 0.8,
+margins = c(10, 4))
+#| fig-width: 8
+#| fig-height: 8
+wh_heatmap <- heatmap(wh_matrix,
+scale="column",
+cexRow = 0.6,
+cexCol = 0.8,
+margins = c(10, 4))
+#| fig-width: 8
+#| fig-height: 8
+wh_heatmap <- heatmap(wh_matrix)
+heatmaply(mtcars)
+#| fig-width: 10
+#| fig-height: 12
+heatmaply(mtcars)
+#| fig-width: 12
+#| fig-height: 12
+heatmaply(mtcars)
+#| fig-width: 20
+#| fig-height: 20
+heatmaply(mtcars)
+heatmaply(
+mtcars,
+width  = 1200,
+height = 800
+)
+heatmaply(
+mtcars,
+width  = 120,
+height = 80
+)
+heatmaply(
+mtcars,
+width  = 600,
+height = 500
+)
+heatmaply(
+mtcars,
+width  = 600,
+height = 400
+)
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)])
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 1000,
+height = 800
+)
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 600,
+height = 400
+)
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 600,
+height = 500
+)
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+scale = "column")
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 600,
+height = 500
+scale = "column"
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 600,
+height = 500,
+scale = "column"
+)
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]))
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 600,
+height = 600,
+scale = "column"
+)
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 1000,
+height = 800,
+scale = "column"
+)
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 1000,
+height = 8000,
+scale = "column"
+)
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 1000,
+height = 1500,
+scale = "column"
+)
+mat <- wh_matrix[, -c(1, 2, 4, 5)]
+mat <- as.matrix(mat)
+mode(mat) <- "numeric"
+mat_norm <- scale(mat)
+heatmaply(
+mat_norm,
+width  = 1000,
+height = 800
+)
+x <- normalize(wh_matrix[, -c(1, 2, 4, 5)])
+x <- as.matrix(x)
+mode(x) <- "numeric"
+heatmaply(x)
+library(heatmaply)
+x <- wh_matrix[, -c(1, 2, 4, 5)]
+x <- as.matrix(x)
+mode(x) <- "numeric"
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0]
+x_norm <- heatmaply::normalize(x)
+x_norm[!is.finite(x_norm)] <- 0
+library(heatmaply)
+x <- wh_matrix[, -c(1, 2, 4, 5)]
+x <- as.matrix(x)
+mode(x) <- "numeric"
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0]
+x_norm <- heatmaply::normalize(x)
+x_norm[!is.finite(x_norm)] <- 0
+library(heatmaply)
+x <- wh_matrix[, -c(1, 2, 4, 5)]
+x <- as.matrix(x)
+mode(x) <- "numeric"
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0]
+x_norm <- heatmaply::normalize(x)
+x_norm[!is.finite(x_norm)] <- 0
+library(heatmaply)
+# 取数值列
+x <- wh_matrix[, -c(1, 2, 4, 5)]
+x <- as.matrix(x)
+mode(x) <- "numeric"
+# 去除零方差列（这是关键）
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0]
+# 使用 heatmaply 自带 normalize
+x_norm <- heatmaply::normalize(x)
+# 清理 normalize 产生的非有限值（这是关键）
+x_norm[!is.finite(x_norm)] <- 0
+library(heatmaply)
+x <- wh_matrix[, -c(1, 2, 4, 5)]
+x <- as.matrix(x)
+mode(x) <- "numeric"
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0]
+x_norm <- heatmaply::normalize(x)
+x_norm <- as.matrix(x_norm)
+mode(x_norm) <- "numeric"
+x_norm[!is.finite(x_norm)] <- 0
+heatmaply(
+x_norm,
+width  = 1000,
+height = 800
+)
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+dist_method = "euclidean",
+hclust_method = "ward.D")
+row.names(wh) <- wh$Country
+wh1 <- dplyr::select(wh, c(3, 7:12))
+wh_matrix <- data.matrix(wh)
+clean_wh_matrix <- function(df, drop_cols) {
+x <- df[, -drop_cols]
+# 强制转数值
+x <- as.data.frame(lapply(x, as.numeric))
+# 去除全 NA 列
+x <- x[, colSums(!is.na(x)) > 0]
+# 去除零方差列
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0]
+# 转为 matrix
+x <- as.matrix(x)
+mode(x) <- "numeric"
+x
+}
+wh_matrix <- clean_wh_matrix(
+wh_matrix,
+drop_cols = c(1, 2, 4, 5)
+)
+row.names(wh) <- wh$Country
+wh1 <- dplyr::select(wh, c(3, 7:12))
+wh_matrix <- data.matrix(wh)
+clean_wh_matrix <- function(df, drop_cols) {
+x <- df[, -drop_cols]
+# 强制数值
+x <- as.data.frame(lapply(x, as.numeric))
+# 转 matrix（关键顺序）
+x <- as.matrix(x)
+mode(x) <- "numeric"
+# 去除全 NA 列
+x <- x[, colSums(!is.na(x)) > 0, drop = FALSE]
+# 去除零方差列
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0, drop = FALSE]
+x
+}
+wh_matrix <- clean_wh_matrix(
+wh_matrix,
+drop_cols = c(1, 2, 4, 5)
+)
+wh_heatmap <- heatmap(wh_matrix,
+Rowv=NA, Colv=NA)
+row.names(wh) <- wh$Country
+wh_numeric <- wh[, c(3, 7:12)]
+clean_wh_matrix <- function(df) {
+x <- as.data.frame(lapply(df, as.numeric))
+row.names(x) <- row.names(df)
+x <- as.matrix(x)
+mode(x) <- "numeric"
+x <- x[, colSums(!is.na(x)) > 0, drop = FALSE]
+x <- x[, apply(x, 2, sd, na.rm = TRUE) > 0, drop = FALSE]
+x
+}
+wh_matrix <- clean_wh_matrix(wh_numeric)
+wh_heatmap <- heatmap(wh_matrix,
+Rowv=NA, Colv=NA)
+#| fig-width: 8
+#| fig-height: 8
+wh_heatmap <- heatmap(wh_matrix)
+#| fig-width: 8
+#| fig-height: 8
+wh_heatmap <- heatmap(wh_matrix,
+scale="column",
+cexRow = 0.6,
+cexCol = 0.8,
+margins = c(10, 4))
+heatmaply(
+mtcars,
+width  = 600,
+height = 400
+)
+mat <- as.matrix(wh_matrix[, -c(1, 2, 4, 5)])
+mode(mat) <- "numeric"
+heatmaply(
+mat,
+width  = 600,
+height = 500
+)
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+scale = "column")
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+scale = "column",  width  = 600,
+height = 500)
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+scale = "column",  width  = 1200,
+height = 1000)
+x <- wh_matrix[, -c(1, 2, 4, 5)]
+heatmaply(
+x,
+scale = "column",
+width  = 1200,
+height = max(800, nrow(x) * 12),
+labRow = NA
+)
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+scale = "column",  width  = 1200,
+height = max(800, nrow(x) * 12),
+labRow = NA)
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+scale = "column",  width  = 1200,
+height = 2000)
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]))
+heatmaply(percentize(wh_matrix[, -c(1, 2, 4, 5)]))
+heatmaply(percentize(wh_matrix[, -c(1, 2, 4, 5)]))
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+dist_method = "euclidean",
+hclust_method = "ward.D")
+wh_d <- dist(normalize(wh_matrix[, -c(1, 2, 4, 5)]), method = "euclidean")
+dend_expend(wh_d)[[3]]
+wh_clust <- hclust(wh_d, method = "average")
+num_k <- find_k(wh_clust)
+plot(num_k)
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+dist_method = "euclidean",
+hclust_method = "average",
+k_row = 3)
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+seriate = "OLO")
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+seriate = "GW")
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+seriate = "mean")
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+seriate = "none")
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+seriate = "none",
+colors = Blues)
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+Colv=NA,
+seriate = "none",
+colors = Blues,
+k_row = 5,
+margins = c(NA,200,60,NA),
+fontsize_row = 4,
+fontsize_col = 5,
+main="World Happiness Score and Variables by Country, 2018 \nDataTransformation using Normalise Method",
+xlab = "World Happiness Indicators",
+ylab = "World Countries"
+)
+pacman::p_load(GGally, parallelPlot, tidyverse)
+pacman::p_load(GGally, parallelPlot, tidyverse)
+wh <- read_csv("data/WHData-2018.csv")
+ggparcoord(data = wh,
+columns = c(7:12))
+ggparcoord(data = wh,
+columns = c(7:12),
+groupColumn = 2,
+scale = "uniminmax",
+alphaLines = 0.2,
+boxplot = TRUE,
+title = "Parallel Coordinates Plot of World Happines Variables")
+ggparcoord(data = wh,
+columns = c(7:12),
+groupColumn = 2,
+scale = "uniminmax",
+alphaLines = 0.2,
+boxplot = TRUE,
+title = "Multiple Parallel Coordinates Plots of World Happines Variables by Region") +
+facet_wrap(~ Region)
+ggparcoord(data = wh,
+columns = c(7:12),
+groupColumn = 2,
+scale = "uniminmax",
+alphaLines = 0.2,
+boxplot = TRUE,
+title = "Multiple Parallel Coordinates Plots of World Happines Variables by Region") +
+facet_wrap(~ Region) +
+theme(axis.text.x = element_text(angle = 30))
+ggparcoord(data = wh,
+columns = c(7:12),
+groupColumn = 2,
+scale = "uniminmax",
+alphaLines = 0.2,
+boxplot = TRUE,
+title = "Multiple Parallel Coordinates Plots of World Happines Variables by Region") +
+facet_wrap(~ Region) +
+theme(axis.text.x = element_text(angle = 30, hjust=1))
+ggparcoord(data = wh,
+columns = c(7:12),
+groupColumn = 2,
+scale = "uniminmax",
+alphaLines = 0.2,
+boxplot = TRUE,
+title = "Multiple Parallel Coordinates Plots of World Happines Variables by Region") +
+facet_wrap(~ Region) +
+theme(axis.text.x = element_text(angle = 30, hjust=1))
+wh <- wh %>%
+select("Happiness score", c(7:12))
+parallelPlot(wh,
+width = 320,
+height = 250)
+parallelPlot(wh,
+continuousCS = "YlOrRd",
+rotateTitle = TRUE)
+histoVisibility <- rep(TRUE, ncol(wh))
+parallelPlot(wh,
+rotateTitle = TRUE,
+histoVisibility = histoVisibility)
+pacman::p_load(treemap, treemapify, tidyverse)
+pacman::p_load(treemap, treemapify, tidyverse)
+realis2018 <- read_csv("data/realis2018.csv")
+realis2018_grouped <- group_by(realis2018, `Project Name`,
+`Planning Region`, `Planning Area`,
+`Property Type`, `Type of Sale`)
+realis2018_summarised <- summarise(realis2018_grouped,
+`Total Unit Sold` = sum(`No. of Units`, na.rm = TRUE),
+`Total Area` = sum(`Area (sqm)`, na.rm = TRUE),
+`Median Unit Price ($ psm)` = median(`Unit Price ($ psm)`, na.rm = TRUE),
+`Median Transacted Price` = median(`Transacted Price ($)`, na.rm = TRUE))
+realis2018_summarised <- realis2018 %>%
+group_by(`Project Name`,`Planning Region`,
+`Planning Area`, `Property Type`,
+`Type of Sale`) %>%
+summarise(`Total Unit Sold` = sum(`No. of Units`, na.rm = TRUE),
+`Total Area` = sum(`Area (sqm)`, na.rm = TRUE),
+`Median Unit Price ($ psm)` = median(`Unit Price ($ psm)`, na.rm = TRUE),
+`Median Transacted Price` = median(`Transacted Price ($)`, na.rm = TRUE))
+realis2018_selected <- realis2018_summarised %>%
+filter(`Property Type` == "Condominium", `Type of Sale` == "Resale")
+treemap(realis2018_selected,
+index=c("Planning Region", "Planning Area", "Project Name"),
+vSize="Total Unit Sold",
+vColor="Median Unit Price ($ psm)",
+title="Resale Condominium by Planning Region and Area, 2017",
+title.legend = "Median Unit Price (S$ per sq. m)"
+)
+treemap(realis2018_selected,
+index=c("Planning Region", "Planning Area", "Project Name"),
+vSize="Total Unit Sold",
+vColor="Median Unit Price ($ psm)",
+type = "value",
+title="Resale Condominium by Planning Region and Area, 2017",
+title.legend = "Median Unit Price (S$ per sq. m)"
+)
+treemap(realis2018_selected,
+index=c("Planning Region", "Planning Area", "Project Name"),
+vSize="Total Unit Sold",
+vColor="Median Unit Price ($ psm)",
+type="value",
+palette="RdYlBu",
+title="Resale Condominium by Planning Region and Area, 2017",
+title.legend = "Median Unit Price (S$ per sq. m)"
+)
+treemap(realis2018_selected,
+index=c("Planning Region", "Planning Area", "Project Name"),
+vSize="Total Unit Sold",
+vColor="Median Unit Price ($ psm)",
+type="manual",
+palette="RdYlBu",
+title="Resale Condominium by Planning Region and Area, 2017",
+title.legend = "Median Unit Price (S$ per sq. m)"
+)
+treemap(realis2018_selected,
+index=c("Planning Region", "Planning Area", "Project Name"),
+vSize="Total Unit Sold",
+vColor="Median Unit Price ($ psm)",
+type="manual",
+palette="Blues",
+algorithm = "squarified",
+title="Resale Condominium by Planning Region and Area, 2017",
+title.legend = "Median Unit Price (S$ per sq. m)"
+)
+treemap(realis2018_selected,
+index=c("Planning Region", "Planning Area", "Project Name"),
+vSize="Total Unit Sold",
+vColor="Median Unit Price ($ psm)",
+type="manual",
+palette="Blues",
+algorithm = "pivotSize",
+sortID = "Median Transacted Price",
+title="Resale Condominium by Planning Region and Area, 2017",
+title.legend = "Median Unit Price (S$ per sq. m)"
+)
+ggplot(data=realis2018_selected,
+aes(area = `Total Unit Sold`,
+fill = `Median Unit Price ($ psm)`),
+layout = "scol",
+start = "bottomleft") +
+geom_treemap() +
+scale_fill_gradient(low = "light blue", high = "blue")
+ggplot(data=realis2018_selected,
+aes(area = `Total Unit Sold`,
+fill = `Median Unit Price ($ psm)`,
+subgroup = `Planning Region`),
+start = "topleft") +
+geom_treemap()
+ggplot(data=realis2018_selected,
+aes(area = `Total Unit Sold`,
+fill = `Median Unit Price ($ psm)`,
+subgroup = `Planning Region`,
+subgroup2 = `Planning Area`)) +
+geom_treemap()
+ggplot(data=realis2018_selected,
+aes(area = `Total Unit Sold`,
+fill = `Median Unit Price ($ psm)`,
+subgroup = `Planning Region`,
+subgroup2 = `Planning Area`)) +
+geom_treemap() +
+geom_treemap_subgroup2_border(colour = "gray40",
+size = 2) +
+geom_treemap_subgroup_border(colour = "gray20")
+install.packages("devtools")

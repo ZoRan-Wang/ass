@@ -1,0 +1,2 @@
+"0","NGA_wp <- NGA_wp %>%"
+"0","  drop_na()"

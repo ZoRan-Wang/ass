@@ -1,0 +1,7 @@
+"0","ggplot(data = exam_data,"
+"0","       aes(x = MATHS)) +"
+"0","  "
+"0","  geom_dotplot(binwidth=2.5,"
+"0","               dotsize= 0.5) +"
+"0","  scale_y_continuous(NULL,"
+"0","                      breaks = NULL)"

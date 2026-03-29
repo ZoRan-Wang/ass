@@ -1,0 +1,5 @@
+"0","col <- c(""Country"", ""Continent"")"
+"0","globalPop <- read_xls(""data/GlobalPopulation.xls"","
+"0","                      sheet=""Data"") %>%"
+"0","  mutate(across(col, as.factor)) %>%"
+"0","  mutate(Year = as.integer(Year))"

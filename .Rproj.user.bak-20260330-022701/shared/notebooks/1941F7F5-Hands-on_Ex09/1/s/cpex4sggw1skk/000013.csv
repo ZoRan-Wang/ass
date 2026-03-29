@@ -1,0 +1,11 @@
+"0","GAStech_graph %>%"
+"0","  activate(edges) %>%"
+"0","  arrange(desc(Weight))"
+"1","[38;5;246m# A tbl_graph: 54 nodes and 1372 edges
+[39m"
+"1","[38;5;246m#
+[39m"
+"1","[38;5;246m# A directed multigraph with 1 component
+[39m"
+"1","[38;5;246m#
+[39m"

@@ -1,0 +1,3 @@
+"0","#Building the static ternary plot"
+"0","ggtern(data=agpop_mutated,aes(x=YOUNG,y=ACTIVE, z=OLD)) +"
+"0","  geom_point()"

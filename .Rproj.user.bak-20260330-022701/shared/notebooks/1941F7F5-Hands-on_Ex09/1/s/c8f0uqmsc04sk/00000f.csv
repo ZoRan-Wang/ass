@@ -1,0 +1,5 @@
+"0","GAStech_edges <- GAStech_edges %>%"
+"0","  mutate(SendDate = dmy(SentDate)) %>%"
+"0","  mutate(Weekday = wday(SentDate,"
+"0","                        label = TRUE,"
+"0","                        abbr = FALSE))"

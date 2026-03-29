@@ -1,0 +1,4 @@
+"0","#| echo: false"
+"0","ggplot(data=exam_data,"
+"0","       aes(x = MATHS)) +"
+"0","  geom_dotplot(dotsize = 0.5)"

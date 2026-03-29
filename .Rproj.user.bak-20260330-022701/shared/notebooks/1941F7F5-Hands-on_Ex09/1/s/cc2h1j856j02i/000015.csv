@@ -1,0 +1,7 @@
+"0","g <- ggraph(GAStech_graph, "
+"0","            layout = ""nicely"") + "
+"0","  geom_edge_link(aes()) +"
+"0","  geom_node_point(aes(colour = Department, "
+"0","                      size = 1))"
+"0",""
+"0","g + theme_graph()"

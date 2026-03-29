@@ -1,0 +1,3 @@
+"0","NGA_wp <- NGA_wp %>%"
+"0","  mutate(pct_functional = wp_functional/total_wp) %>%"
+"0","  mutate(pct_nonfunctional = wp_nonfunctional/total_wp)"

@@ -1,0 +1,4 @@
+"0","sgpools_sf <- st_as_sf(sgpools, "
+"0","                       coords = c(""XCOORD"", ""YCOORD""),"
+"0","                       crs= 3414)"
+"0",""

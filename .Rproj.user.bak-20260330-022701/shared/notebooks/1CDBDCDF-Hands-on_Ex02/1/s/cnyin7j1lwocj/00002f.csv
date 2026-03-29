@@ -1,0 +1,6 @@
+"0","patchwork <- (p1 / p2) | p3"
+"0","patchwork &"
+"0","  theme_economist(base_size = 7) +"
+"0","  theme("
+"0","    plot.title = element_text(size = 7)"
+"0","  )"

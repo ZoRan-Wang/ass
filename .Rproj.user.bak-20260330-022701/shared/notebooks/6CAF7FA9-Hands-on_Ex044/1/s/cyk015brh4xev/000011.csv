@@ -1,0 +1,18 @@
+"0","funnel_plot("
+"0","  .data = covid19,"
+"0","  numerator = Positive,"
+"0","  denominator = Death,"
+"0","  group = `Sub-district`"
+"0",")"
+"1","A funnel plot object with"
+"1"," "
+"1","267"
+"1"," "
+"1","points of which"
+"1"," "
+"1","0"
+"1"," "
+"1","are outliers. 
+"
+"1","Plot is adjusted for overdispersion. 
+"

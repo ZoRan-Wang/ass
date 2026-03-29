@@ -1,0 +1,2 @@
+"0","covid19 <- read_csv(""data/COVID-19_DKI_Jakarta.csv"") %>%"
+"0","  mutate_if(is.character, as.factor)"

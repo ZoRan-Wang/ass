@@ -1,0 +1,6 @@
+"0","g <- ggraph(GAStech_graph) + "
+"0","  geom_edge_link(aes(colour = 'grey50')) +"
+"0","  geom_node_point(aes(colour = 'grey40'))"
+"0",""
+"0","g + theme_graph(background = 'grey10',"
+"0","                text_colour = 'white')"

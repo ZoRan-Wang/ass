@@ -1,0 +1,5 @@
+"0","ggplot(data = exam_data,"
+"0","       aes(x = RACE)) + "
+"0","  geom_bar() +"
+"0","  coord_flip() +"
+"0","  theme_gray()"

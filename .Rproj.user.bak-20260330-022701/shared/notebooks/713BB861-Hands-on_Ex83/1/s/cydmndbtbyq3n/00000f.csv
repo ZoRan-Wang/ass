@@ -1,0 +1,6 @@
+"0","get.var <- function(vname,df) {"
+"0","  v <- df[vname] %>% "
+"0","    st_set_geometry(NULL)"
+"0","  v <- unname(v[,1])"
+"0","  return(v)"
+"0","}"

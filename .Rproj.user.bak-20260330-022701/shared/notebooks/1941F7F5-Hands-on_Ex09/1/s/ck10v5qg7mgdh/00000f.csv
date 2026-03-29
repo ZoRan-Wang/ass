@@ -1,0 +1,7 @@
+"0","    visNetwork(GAStech_nodes,"
+"0","               GAStech_edges_aggregated) %>%"
+"0","      visIgraphLayout(layout = ""layout_with_fr"") %>%"
+"0","      visOptions(highlightNearest = TRUE,"
+"0","                 nodesIdSelection = TRUE) %>%"
+"0","      visLegend() %>%"
+"0","      visLayout(randomSeed = 123)"

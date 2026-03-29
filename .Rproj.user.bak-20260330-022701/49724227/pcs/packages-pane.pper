@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "G:/SMU/visual/support/R-4.5.2/library",
+        "installDependencies": true
+    }
+}

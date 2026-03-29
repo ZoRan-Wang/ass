@@ -1,0 +1,4 @@
+"0","ggplot(data = NGA_wp,"
+"0","       aes(x = """","
+"0","           y = wp_nonfunctional)) +"
+"0","  geom_boxplot()"

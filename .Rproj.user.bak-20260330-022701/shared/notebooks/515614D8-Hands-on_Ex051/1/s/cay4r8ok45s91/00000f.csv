@@ -1,0 +1,5 @@
+"0","#Building the static ternary plot"
+"0","ggtern(data=agpop_mutated, aes(x=YOUNG,y=ACTIVE, z=OLD)) +"
+"0","  geom_point() +"
+"0","  labs(title=""Population structure, 2015"") +"
+"0","  theme_rgbw()                      "

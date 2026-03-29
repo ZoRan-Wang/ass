@@ -1,0 +1,5 @@
+"0","df <- covid19 %>%"
+"0","  mutate(rate = Death / Positive) %>%"
+"0","  mutate(rate.se = sqrt((rate*(1-rate)) / (Positive))) %>%"
+"0","  filter(rate > 0)"
+"0","fit.mean <- weighted.mean(df$rate, 1/df$rate.se^2)"

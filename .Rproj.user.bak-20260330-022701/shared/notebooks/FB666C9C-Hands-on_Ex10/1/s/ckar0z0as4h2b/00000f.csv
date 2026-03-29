@@ -1,0 +1,4 @@
+"0","install.packages(c("
+"0","  ""lubridate"", ""ggthemes"", ""reactable"","
+"0","  ""gt"", ""gtExtras"", ""tidyverse"", ""pacman"", ""remotes"""
+"0","))"

@@ -1,0 +1,8 @@
+"0","visNetwork(GAStech_nodes,"
+"0","           GAStech_edges_aggregated) %>%"
+"0","  visIgraphLayout(layout = ""layout_with_fr"") %>%"
+"0","  visEdges(arrows = ""to"", "
+"0","           smooth = list(enabled = TRUE, "
+"0","                         type = ""curvedCW"")) %>%"
+"0","  visLegend() %>%"
+"0","  visLayout(randomSeed = 123)"

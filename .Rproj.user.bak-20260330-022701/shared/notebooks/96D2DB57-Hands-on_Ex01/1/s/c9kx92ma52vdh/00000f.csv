@@ -1,0 +1,5 @@
+"0","ggplot(data = exam_data,"
+"0","       aes(x = MATHS)) +"
+"0","  geom_histogram(bins = 20,"
+"0","                 color = ""black"","
+"0","                 fill = ""lightblue"")"

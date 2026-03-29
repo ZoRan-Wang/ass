@@ -1,0 +1,2 @@
+"0","GAStech_nodes <- read_csv(""data/GAStech_email_node.csv"")"
+"0","GAStech_edges <- read_csv(""data/GAStech_email_edge-v2.csv"")"

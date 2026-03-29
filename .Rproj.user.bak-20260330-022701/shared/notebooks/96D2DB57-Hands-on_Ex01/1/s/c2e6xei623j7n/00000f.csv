@@ -1,0 +1,4 @@
+"0","ggplot(data = exam_data,"
+"0","       aes(y = MATHS,"
+"0","           x = GENDER)) +"
+"0","  geom_boxplot()"

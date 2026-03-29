@@ -1,0 +1,3 @@
+"0","ggplot(data = exam_data,"
+"0","       aes(x = MATHS)) +"
+"0","  geom_histogram()"
